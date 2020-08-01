@@ -45,7 +45,7 @@ def backup_func():
     os.remove(file1)
     #sistema de verificaçao automatica para banimento no grupo
     try:
-        conexao_sqlite = sqlite3.connect('bot_database.db')
+        conexao_sqlite = sqlite3.connect('bot_files/bot_database.db')
         conexao_sqlite.row_factory = sqlite3.Row
         cursor_sqlite = conexao_sqlite.cursor()
         hoje = datetime.now().strftime('%d/%m/%Y %H:%M:%S')

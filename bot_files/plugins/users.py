@@ -9,27 +9,23 @@
 #     |   TCXS Project Hacker Team - https://tcxsproject.com.br   |
 #     |   Telegram: @GorpoOrko Mail:gorpoorko@protonmail.com      |
 #     [+]        Github Gorpo Dev: https://github.com/gorpo     [+]
-
-
-
 import time
 from amanobot.namedtuple import InlineKeyboardMarkup
 from bot_files import keyboard
 from datetime import datetime
-from bot_files.config import bot, version, bot_username, git_repo,logs,sudoers
+from bot_files.config import bot, version
 import sqlite3
 import os
 from bot_files.plugins.admins import is_admin
 
 
-
 async def users(msg):
     # variaveis que iniciam a Database para enviar a att paga pelos BOTOES
-    conexao_sqlite = sqlite3.connect('bot_database.db')
+    conexao_sqlite = sqlite3.connect('bot_files/bot_database.db')
     conexao_sqlite.row_factory = sqlite3.Row
     cursor_sqlite = conexao_sqlite.cursor()
     # database logs ---->
-    conexao_logs = sqlite3.connect('bot_database_logs.db')
+    conexao_logs = sqlite3.connect('bot_files/bot_database_logs.db')
     conexao_logs.row_factory = sqlite3.Row
     cursor_logs = conexao_logs.cursor()
     try:
@@ -40,7 +36,7 @@ async def users(msg):
     if msg.get('text') and msg['chat']['type'] == 'supergroup':
         if msg['from']['first_name']:
             pass
-            print('->Usuario:{} ->Envio:{} ->Grupo:{} ->Data/Hora:{} '.format(msg['from']['first_name'],msg['text'],msg['chat']['title'],time.ctime()))
+            print('->Usuario:{} ->Envio:{} ->Grupo:{} ->Data/Hora:{} '.format(msg['from']['first_name'] ,msg['text'], msg['chat']['title'],time.ctime()))
 
 
 ## SISTEMA DE GRAVAÇÃO E ENVIO DE LOGS ---------------------------------------------------------------------------------------------------------------->
@@ -116,7 +112,7 @@ async def users(msg):
                 [dict(text="🤖‍ Admin's", callback_data='comandos_admins')],
                 [dict(text='🧰 Ferramentas', callback_data='ferramentas_gerais')] +
                 [dict(text='📣 Info | Extras', callback_data='infos_extras')],])
-            await bot.sendMessage(msg['chat']['id'],f"***{msg['from']['first_name']} Aqui está uma lista com todos meus comandos e informações que você precisa saber.***" ,'markdown',  reply_markup=kb)
+            await bot.sendMessage(msg['chat']['id'],f"***{msg['from']['first_name']} Aqui está uma lista com todos meus comandos e informações que você precisa saber.***",'markdown',  reply_markup=kb)
         #return True
 
 
@@ -150,7 +146,7 @@ async def users(msg):
                     data_att = resultado['data']
                     uploader_id = resultado['uploader']
                 await bot.editMessageText((msg['message']['chat']['id'], msg['message']['message_id']),f"📦 `INSTRUÇÕES:` ```------ Abaixo temos a ultima atualização da TCXS Store para PlayStation3, baixe  e insira no pendrive, plugue o pendrive em seu console, ative o Hen e instale ela pelo Package Manager.\nCaso seja usuário de HAN será necessário usar o Fix,baixe ele, depois basta inserir o Fix e a Loja em seu pendrive e através do seu Han instalar ambos arquivos, ambos processos concluidos reinicie seu console!```",'markdown', reply_markup=keyboard.voltar_store_free)
-                await bot.sendDocument(msg['message']['chat']['id'], document=id_pkg,caption=f'{nome_pkg} upada em {data_att} por @{uploader_id}')
+                await bot.sendDocument(msg['message']['chat']['id'], document= id_pkg,caption=f'{nome_pkg} upada em {data_att} por @{uploader_id}')
 
         #entrega do fix
         elif msg['data'].split()[0] == 'download_fix':
