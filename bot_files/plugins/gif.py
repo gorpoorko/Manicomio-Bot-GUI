@@ -15,7 +15,7 @@ import random
 import aiohttp
 from bot_files.config import bot, keys
 
-giphy_key = keys['giphy']
+giphy_key = keys['token_giphy']
 
 
 async def gif(msg):
