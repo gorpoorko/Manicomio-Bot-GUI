@@ -1,0 +1,75 @@
+<RCC>
+  <qresource prefix="abre_menu">
+    <file>program_functions/images/menu-4-24.png</file>
+  </qresource>
+  <qresource prefix="favicon">
+    <file>program_functions/images/icon.ico</file>
+  </qresource>
+  <qresource prefix="logo_telegram">
+    <file>program_functions/images/telegram_logo.png</file>
+  </qresource>
+  <qresource prefix="background">
+    <file>program_functions/images/bg_home.jpg</file>
+  </qresource>
+  <qresource prefix="logo_manicomio">
+    <file>program_functions/images/logo_manicomio.png</file>
+  </qresource>
+  <qresource prefix="logo_python">
+    <file>program_functions/images/python.png</file>
+  </qresource>
+  <qresource prefix="menu_iniciar">
+    <file>program_functions/images/iniciar.png</file>
+  </qresource>
+  <qresource prefix="avanca_site">
+    <file>program_functions/images/arrow-right.png</file>
+  </qresource>
+  <qresource prefix="reload_site">
+    <file>program_functions/images/reload.png</file>
+  </qresource>
+  <qresource prefix="newPrefix"/>
+  <qresource prefix="volta_site">
+    <file>program_functions/images/arrow-left.png</file>
+  </qresource>
+  <qresource prefix="browser">
+    <file>program_functions/images/browser-24.png</file>
+  </qresource>
+  <qresource prefix="redimensiona">
+    <file>program_functions/images/cil-move.png</file>
+  </qresource>
+  <qresource prefix="home">
+    <file>program_functions/images/home-5-24.png</file>
+  </qresource>
+  <qresource prefix="fechar">
+    <file>program_functions/images/icons8-delete-24.png</file>
+  </qresource>
+  <qresource prefix="minimizar">
+    <file>program_functions/images/minimize.png</file>
+  </qresource>
+  <qresource prefix="maximizar">
+    <file>program_functions/images/icons8-toggle-full-screen-24.png</file>
+  </qresource>
+  <qresource prefix="voltar_maximizado">
+    <file>program_functions/images/volta_full_screen.png</file>
+  </qresource>
+  <qresource prefix="camera">
+    <file>program_functions/images/screenshot-24.png</file>
+  </qresource>
+  <qresource prefix="bot">
+    <file>program_functions/images/telegram.png</file>
+  </qresource>
+  <qresource prefix="server">
+    <file>program_functions/images/server-24.png</file>
+  </qresource>
+  <qresource prefix="banco de dados">
+    <file>program_functions/images/data-configuration-24.png</file>
+  </qresource>
+  <qresource prefix="deepnude">
+    <file>program_functions/images/icons8-bottom-24.png</file>
+  </qresource>
+  <qresource prefix="snes">
+    <file>program_functions/images/joystick-2-24.png</file>
+  </qresource>
+  <qresource prefix="configuracoes">
+    <file>program_functions/images/services-24.png</file>
+  </qresource>
+</RCC>
