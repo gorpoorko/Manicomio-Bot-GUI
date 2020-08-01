@@ -10,12 +10,9 @@
 #     |   Telegram: @GorpoOrko Mail:gorpoorko@protonmail.com      |
 #     [+]        Github Gorpo Dev: https://github.com/gorpo     [+]
 
-import re
-import json
-import aiohttp
+
 import requests
 from bot_files.config import bot, keys
-from bot_files.utils import get_flag
 
 async def weather(msg):
     if msg.get('text'):
@@ -25,8 +22,8 @@ async def weather(msg):
             else:
                 cidade = msg['text'][7:]
                 try:
+                    key = keys['token_weather']
                     url = 'https://api.hgbrasil.com/weather'
-                    key = '0418e7f0'
                     fields = "only_results,temp,city_name,forecast,max,min,date"
                     data = {'key': key, 'fields': fields, 'city_name': cidade}
                     req = requests.get(url, data=data, timeout=3000)

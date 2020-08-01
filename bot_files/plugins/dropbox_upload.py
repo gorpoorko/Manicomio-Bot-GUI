@@ -87,7 +87,7 @@ async def dropbox_upload(msg):
                     dl_url = re.sub(r"\?dl\=0", "?dl=1", url)
                     await bot.sendMessage(chat_id,f"🤖 {msg['from']['first_name']} acabei upar seu arquivo no Dropbox:{dl_url}",reply_to_message_id=msg['message_id'])
                     os.remove(f'bot_files/arquivos/{nome_arquivo}')
-            except:
+            except Exception as e:
                 pass
 
 
