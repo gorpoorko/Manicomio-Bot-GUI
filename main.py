@@ -8,20 +8,17 @@
 # ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝ ╚═════╝
 #            @GorpoOrko | Manicomio TCXS Project | 2020
 """Anotações:
-
 criar arquivo mainwindow.py:
     pyuic5 -x mainwindow.ui -o mainwindow.py
 
 criar arquivo files_rc_rc.py
     pyrcc5 -o files_rc_rc.py files_rc.qrc
 
-
 sempre que quisermos chamar um stackedWidget usamos o comando abaixo e mudar sua "indexação"
     self.ui.stackedWidget.setCurrentIndex(1)
 
 usando o sistema para chamar os arquivos do layout:
     self.ui.string_do_objeto
-
 
 Exemplo de layout limpo:
 import sys

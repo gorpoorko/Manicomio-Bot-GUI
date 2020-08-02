@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>726</width>
-    <height>564</height>
+    <height>565</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -2036,7 +2036,7 @@ QComboBox:pressed {
                    </property>
                    <item>
                     <property name="text">
-                     <string>        selecione a tabela</string>
+                     <string>selecione a tabela</string>
                     </property>
                    </item>
                   </widget>
@@ -2303,18 +2303,62 @@ QPushButton:pressed {
                   </widget>
                  </item>
                  <item>
-                  <widget class="QSlider" name="slider_banimento_automatico">
+                  <widget class="QPushButton" name="botao_ativa_banimento">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>20</height>
+                    </size>
+                   </property>
                    <property name="styleSheet">
-                    <string notr="true">QSlider::handle:horizontal {background-color: rgb(120,0,0);}</string>
+                    <string notr="true">QPushButton {
+	background-color:transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 2px solid rgb(45,45,45);
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+	font: 15px SegoeUIl, bold;
+}
+QPushButton:hover {
+	background-color: rgb(120,0,0);
+}
+QPushButton:pressed {
+	background-color: rgb(120,0,0);
+}</string>
                    </property>
-                   <property name="maximum">
-                    <number>1</number>
+                   <property name="text">
+                    <string>ativado</string>
                    </property>
-                   <property name="orientation">
-                    <enum>Qt::Horizontal</enum>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="botao_desativa_banimento">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>20</height>
+                    </size>
                    </property>
-                   <property name="tickPosition">
-                    <enum>QSlider::TicksAbove</enum>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton {
+	background-color:transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 2px solid rgb(45,45,45);
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+	font: 15px SegoeUIl, bold;
+}
+QPushButton:hover {
+	background-color: rgb(120,0,0);
+}
+QPushButton:pressed {
+	background-color: rgb(120,0,0);
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>desativado</string>
                    </property>
                   </widget>
                  </item>
@@ -2364,18 +2408,56 @@ QPushButton:pressed {
                   </widget>
                  </item>
                  <item>
-                  <widget class="QSlider" name="slider_local_inteligencia">
+                  <widget class="QPushButton" name="botao_inteligencia_local">
                    <property name="styleSheet">
-                    <string notr="true">QSlider::handle:horizontal {background-color: rgb(120,0,0);}</string>
+                    <string notr="true">QPushButton {
+	background-color:transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 2px solid rgb(45,45,45);
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+	font: 15px SegoeUIl, bold;
+}
+QPushButton:hover {
+	background-color: rgb(120,0,0);
+}
+QPushButton:pressed {
+	background-color: rgb(120,0,0);
+}</string>
                    </property>
-                   <property name="maximum">
-                    <number>1</number>
+                   <property name="text">
+                    <string>local</string>
                    </property>
-                   <property name="orientation">
-                    <enum>Qt::Horizontal</enum>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="botao_inteligencia_global">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>20</height>
+                    </size>
                    </property>
-                   <property name="tickPosition">
-                    <enum>QSlider::TicksAbove</enum>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton {
+	background-color:transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 2px solid rgb(45,45,45);
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+	font: 15px SegoeUIl, bold;
+}
+QPushButton:hover {
+	background-color: rgb(120,0,0);
+}
+QPushButton:pressed {
+	background-color: rgb(120,0,0);
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>global</string>
                    </property>
                   </widget>
                  </item>
@@ -2431,6 +2513,9 @@ QPushButton:pressed {
                    </property>
                    <property name="maximum">
                     <number>10</number>
+                   </property>
+                   <property name="pageStep">
+                    <number>1</number>
                    </property>
                    <property name="orientation">
                     <enum>Qt::Horizontal</enum>
