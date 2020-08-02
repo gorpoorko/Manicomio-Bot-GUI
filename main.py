@@ -53,7 +53,7 @@ from PyQt5 import QtSql, QtCore, QtGui
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from mainwindow import Ui_MainWindow
-from program_functions import menus, database_reader, deepnude, tokensBot, funcoes_bot
+from program_functions import menus, database_reader, deepnude, tokensBot, funcoes_bot, settings_bot
 import subprocess
 from PIL import Image
 
@@ -73,6 +73,7 @@ class MainWindow(QMainWindow):
         deepnude.deepNude(self)
         tokensBot.tokensBot(self)
         funcoes_bot.funcoesBot(self)
+        settings_bot.settingsBot(self)
 
 
 if __name__ == "__main__":

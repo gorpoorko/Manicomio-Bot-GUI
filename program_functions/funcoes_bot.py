@@ -90,7 +90,6 @@ def enviarImagem(self):
                 # print(self.imagem_recebida)
                 self.imagem_recebida.clear()
                 self.imagem_recebida.append(fileName)
-                print(fileName)
         # carrega na variavel do Image do pilow (PIL) a imagem aberta
         im1 = Image.open(self.imagem_recebida[0])
         # salva a imagem usando a extensao que quisermos
@@ -107,17 +106,41 @@ def enviarImagem(self):
 
 
 def enviarVideo(self):
-    pass
+    try:
+        janela3 = QWidget()
+        janela3.resize(800, 600)
+        janela3.move(100, 200)
+        janela3.setWindowTitle('Manicômio | Enviar Video')
+        options = QFileDialog.Options()
+        fileName, _ = QFileDialog.getOpenFileName(janela3, "MANICOMIO | ENVIO DE VIDEOS | Escolha seu video", "",
+                                                  "All Files (*);;MP4 (*.mp4);;MP4 (*.mp4)", options=options)
+        print(fileName)
+        na_bot.sendVideo(self.grupos_listado, video=open(fileName, 'rb'))
+    except Exception as e:
+        print(e)
 
 def enviarDocumento(self):
-    pass
+    try:
+        janela4 = QWidget()
+        janela4.resize(800, 600)
+        janela4.move(100, 200)
+        janela4.setWindowTitle('Manicômio | Enviar Video')
+        options = QFileDialog.Options()
+        fileName, _ = QFileDialog.getOpenFileName(janela4, "MANICOMIO | ENVIO DE VIDEOS | Escolha seu video", "",
+                                                  "All Files (*);;MP4 (*.mp4);;MP4 (*.mp4)", options=options)
+        print(fileName)
+        na_bot.sendDocument(self.grupos_listado, document=open(fileName, 'rb'))
+    except Exception as e:
+        print(e)
 
 
 
 def enviarMensagens(self):
-    self.texto = self.ui.texto_enviar_mensagem.toPlainText()
+    self.texto = self.ui.linha_mensagem.text()
     try:
+        self.ui.linha_mensagem.clear()
         na_bot.sendMessage(self.grupos_listado, self.texto)
+
     except:
         pass
 
