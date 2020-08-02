@@ -15,9 +15,9 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.setEnabled(True)
-        MainWindow.resize(726, 589)
+        MainWindow.resize(726, 651)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/favicon/bot/images/icon.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(":/favicon/program_functions/images//icon.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
         MainWindow.setStyleSheet("QMainWindow{background-color: darkgray;border: 1px solid black;}")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -40,7 +40,7 @@ class Ui_MainWindow(object):
         self.frame_logo = QtWidgets.QFrame(self.barra_superior)
         self.frame_logo.setMinimumSize(QtCore.QSize(250, 50))
         self.frame_logo.setMaximumSize(QtCore.QSize(250, 16777215))
-        self.frame_logo.setStyleSheet("image: url(:/logo_manicomio/bot/images/logo_manicomio.png);")
+        self.frame_logo.setStyleSheet("image: url(:/logo_manicomio/program_functions/images//logo_manicomio.png);")
         self.frame_logo.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_logo.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_logo.setObjectName("frame_logo")
@@ -62,7 +62,7 @@ class Ui_MainWindow(object):
         self.botao_home = QtWidgets.QPushButton(self.frame_botoes)
         self.botao_home.setMinimumSize(QtCore.QSize(50, 50))
         self.botao_home.setStyleSheet("QPushButton {\n"
-"    background-image: url(:/home/bot/images/home-5-24.png);\n"
+"    background-image: url(:/home/program_functions/images//home-5-24.png);\n"
 "    background-color: transparent;\n"
 "    background-repeat: no-repeat;\n"
 "    background-position: center;\n"
@@ -80,7 +80,7 @@ class Ui_MainWindow(object):
         self.botao_bot = QtWidgets.QPushButton(self.frame_botoes)
         self.botao_bot.setMinimumSize(QtCore.QSize(50, 50))
         self.botao_bot.setStyleSheet("QPushButton {\n"
-"background-image: url(:/bot/bot/images/telegram.png);\n"
+"background-image: url(:/bot/program_functions/images//telegram.png);\n"
 "    background-color: transparent;\n"
 "    background-repeat: no-repeat;\n"
 "    background-position: center;\n"
@@ -105,7 +105,7 @@ class Ui_MainWindow(object):
 "   </property>\n"
 "   <property name=\"styleSheet\">\n"
 "    <string notr=\"true\">QPushButton {\n"
-"    background-image: url(:/home/bot/images/home-5-24.png);\n"
+"    background-image: url(:/home/program_functions/images//home-5-24.png);\n"
 "    background-color: transparent;\n"
 "    background-repeat: no-repeat;\n"
 "    background-position: center;\n"
@@ -132,7 +132,7 @@ class Ui_MainWindow(object):
         self.botao_database = QtWidgets.QPushButton(self.frame_botoes)
         self.botao_database.setMinimumSize(QtCore.QSize(50, 50))
         self.botao_database.setStyleSheet("QPushButton {\n"
-"background-image: url(:/banco de dados/bot/images/data-configuration-24.png);\n"
+"background-image: url(:/banco de dados/program_functions/images//data-configuration-24.png);\n"
 "    background-color: transparent;\n"
 "    background-repeat: no-repeat;\n"
 "    background-position: center;\n"
@@ -157,7 +157,7 @@ class Ui_MainWindow(object):
 "   </property>\n"
 "   <property name=\"styleSheet\">\n"
 "    <string notr=\"true\">QPushButton {\n"
-"    background-image: url(:/home/bot/images/home-5-24.png);\n"
+"    background-image: url(:/home/program_functions/images//home-5-24.png);\n"
 "    background-color: transparent;\n"
 "    background-repeat: no-repeat;\n"
 "    background-position: center;\n"
@@ -184,7 +184,7 @@ class Ui_MainWindow(object):
         self.botao_deepnude = QtWidgets.QPushButton(self.frame_botoes)
         self.botao_deepnude.setMinimumSize(QtCore.QSize(0, 50))
         self.botao_deepnude.setStyleSheet("QPushButton {\n"
-"background-image: url(:/deepnude/bot/images/icons8-bottom-24.png);\n"
+"background-image: url(:/deepnude/program_functions/images//icons8-bottom-24.png);\n"
 "    background-color: transparent;\n"
 "    background-repeat: no-repeat;\n"
 "    background-position: center;\n"
@@ -209,7 +209,7 @@ class Ui_MainWindow(object):
 "   </property>\n"
 "   <property name=\"styleSheet\">\n"
 "    <string notr=\"true\">QPushButton {\n"
-"    background-image: url(:/home/bot/images/home-5-24.png);\n"
+"    background-image: url(:/home/program_functions/images//home-5-24.png);\n"
 "    background-color: transparent;\n"
 "    background-repeat: no-repeat;\n"
 "    background-position: center;\n"
@@ -236,7 +236,7 @@ class Ui_MainWindow(object):
         self.botao_config = QtWidgets.QPushButton(self.frame_botoes)
         self.botao_config.setMinimumSize(QtCore.QSize(50, 50))
         self.botao_config.setStyleSheet("QPushButton {\n"
-"background-image: url(:/configuracoes/bot/images/services-24.png);\n"
+"background-image: url(:/configuracoes/program_functions/images//services-24.png);\n"
 "    background-color: transparent;\n"
 "    background-repeat: no-repeat;\n"
 "    background-position: center;\n"
@@ -261,7 +261,7 @@ class Ui_MainWindow(object):
 "   </property>\n"
 "   <property name=\"styleSheet\">\n"
 "    <string notr=\"true\">QPushButton {\n"
-"    background-image: url(:/home/bot/images/home-5-24.png);\n"
+"    background-image: url(:/home/program_functions/images//home-5-24.png);\n"
 "    background-color: transparent;\n"
 "    background-repeat: no-repeat;\n"
 "    background-position: center;\n"
@@ -306,9 +306,9 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.setSpacing(0)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.banner_home = QtWidgets.QFrame(self.pagina_home)
-        self.banner_home.setMinimumSize(QtCore.QSize(0, 390))
+        self.banner_home.setMinimumSize(QtCore.QSize(0, 380))
         self.banner_home.setAutoFillBackground(False)
-        self.banner_home.setStyleSheet("background-image: url(:/background/bot/images/bg_home.jpg);\n"
+        self.banner_home.setStyleSheet("background-image: url(:/background/program_functions/images//bg_home.jpg);\n"
 "background-color: rgb(0, 0, 0);\n"
 "background-position: center center;\n"
 "background-repeat: no-repeat;\n"
@@ -318,16 +318,8 @@ class Ui_MainWindow(object):
         self.banner_home.setFrameShadow(QtWidgets.QFrame.Raised)
         self.banner_home.setObjectName("banner_home")
         self.verticalLayout_2.addWidget(self.banner_home)
-        self.base_home = QtWidgets.QFrame(self.pagina_home)
-        self.base_home.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.base_home.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.base_home.setObjectName("base_home")
-        self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.base_home)
-        self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_4.setSpacing(0)
-        self.verticalLayout_4.setObjectName("verticalLayout_4")
-        self.frame_configs_bot = QtWidgets.QFrame(self.base_home)
-        self.frame_configs_bot.setMaximumSize(QtCore.QSize(16777215, 110))
+        self.frame_configs_bot = QtWidgets.QFrame(self.pagina_home)
+        self.frame_configs_bot.setMaximumSize(QtCore.QSize(16777215, 180))
         self.frame_configs_bot.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.frame_configs_bot.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_configs_bot.setObjectName("frame_configs_bot")
@@ -344,7 +336,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_6.setSpacing(0)
         self.verticalLayout_6.setObjectName("verticalLayout_6")
         self.inserir_token_bot = QtWidgets.QLineEdit(self.frame_dados_bot)
-        self.inserir_token_bot.setMinimumSize(QtCore.QSize(0, 20))
+        self.inserir_token_bot.setMinimumSize(QtCore.QSize(0, 30))
         self.inserir_token_bot.setStyleSheet("QLineEdit{\n"
 "border: 2px solid rgb(45,45,45);\n"
 "border-radius: 5px;\n"
@@ -406,17 +398,7 @@ class Ui_MainWindow(object):
         self.inserir_id_pessoal_bot.setClearButtonEnabled(False)
         self.inserir_id_pessoal_bot.setObjectName("inserir_id_pessoal_bot")
         self.verticalLayout_6.addWidget(self.inserir_id_pessoal_bot)
-        self.horizontalLayout_5.addWidget(self.frame_dados_bot)
-        self.frame_tokens = QtWidgets.QFrame(self.frame_configs_bot)
-        self.frame_tokens.setMinimumSize(QtCore.QSize(0, 20))
-        self.frame_tokens.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.frame_tokens.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_tokens.setObjectName("frame_tokens")
-        self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.frame_tokens)
-        self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_5.setSpacing(0)
-        self.verticalLayout_5.setObjectName("verticalLayout_5")
-        self.inserir_id_backups = QtWidgets.QLineEdit(self.frame_tokens)
+        self.inserir_id_backups = QtWidgets.QLineEdit(self.frame_dados_bot)
         self.inserir_id_backups.setMinimumSize(QtCore.QSize(0, 20))
         self.inserir_id_backups.setStyleSheet("QLineEdit{\n"
 "border: 2px solid rgb(45,45,45);\n"
@@ -436,7 +418,17 @@ class Ui_MainWindow(object):
         self.inserir_id_backups.setAlignment(QtCore.Qt.AlignCenter)
         self.inserir_id_backups.setClearButtonEnabled(False)
         self.inserir_id_backups.setObjectName("inserir_id_backups")
-        self.verticalLayout_5.addWidget(self.inserir_id_backups)
+        self.verticalLayout_6.addWidget(self.inserir_id_backups)
+        self.horizontalLayout_5.addWidget(self.frame_dados_bot)
+        self.frame_tokens = QtWidgets.QFrame(self.frame_configs_bot)
+        self.frame_tokens.setMinimumSize(QtCore.QSize(0, 20))
+        self.frame_tokens.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.frame_tokens.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_tokens.setObjectName("frame_tokens")
+        self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.frame_tokens)
+        self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_5.setSpacing(0)
+        self.verticalLayout_5.setObjectName("verticalLayout_5")
         self.inserir_token_dropbox = QtWidgets.QLineEdit(self.frame_tokens)
         self.inserir_token_dropbox.setMinimumSize(QtCore.QSize(0, 20))
         self.inserir_token_dropbox.setStyleSheet("QLineEdit{\n"
@@ -479,6 +471,48 @@ class Ui_MainWindow(object):
         self.inserir_token_giphy.setClearButtonEnabled(False)
         self.inserir_token_giphy.setObjectName("inserir_token_giphy")
         self.verticalLayout_5.addWidget(self.inserir_token_giphy)
+        self.inserir_token_bitly = QtWidgets.QLineEdit(self.frame_tokens)
+        self.inserir_token_bitly.setMinimumSize(QtCore.QSize(0, 20))
+        self.inserir_token_bitly.setStyleSheet("QLineEdit{\n"
+"border: 2px solid rgb(45,45,45);\n"
+"border-radius: 5px;\n"
+"padding: 10px;\n"
+"background-color: rgb(30,30,30);\n"
+"    color: rgb(203, 203, 203);\n"
+"font: 13px Courier New;\n"
+"}\n"
+"QLineEdit:hover{\n"
+"border: 2px solid rgb(55,55,55);\n"
+"}\n"
+"QLineEdit:focus{\n"
+"border: 2px solid  rgb(120,0,0);\n"
+"    color: rgb(120,0,0);\n"
+"}")
+        self.inserir_token_bitly.setAlignment(QtCore.Qt.AlignCenter)
+        self.inserir_token_bitly.setClearButtonEnabled(False)
+        self.inserir_token_bitly.setObjectName("inserir_token_bitly")
+        self.verticalLayout_5.addWidget(self.inserir_token_bitly)
+        self.inserir_id_google = QtWidgets.QLineEdit(self.frame_tokens)
+        self.inserir_id_google.setMinimumSize(QtCore.QSize(0, 20))
+        self.inserir_id_google.setStyleSheet("QLineEdit{\n"
+"border: 2px solid rgb(45,45,45);\n"
+"border-radius: 5px;\n"
+"padding: 10px;\n"
+"background-color: rgb(30,30,30);\n"
+"    color: rgb(203, 203, 203);\n"
+"font: 13px Courier New;\n"
+"}\n"
+"QLineEdit:hover{\n"
+"border: 2px solid rgb(55,55,55);\n"
+"}\n"
+"QLineEdit:focus{\n"
+"border: 2px solid  rgb(120,0,0);\n"
+"    color: rgb(120,0,0);\n"
+"}")
+        self.inserir_id_google.setAlignment(QtCore.Qt.AlignCenter)
+        self.inserir_id_google.setClearButtonEnabled(False)
+        self.inserir_id_google.setObjectName("inserir_id_google")
+        self.verticalLayout_5.addWidget(self.inserir_id_google)
         self.horizontalLayout_5.addWidget(self.frame_tokens)
         self.frame_2 = QtWidgets.QFrame(self.frame_configs_bot)
         self.frame_2.setFrameShape(QtWidgets.QFrame.NoFrame)
@@ -551,10 +585,31 @@ class Ui_MainWindow(object):
         self.inserir_token_yandex.setClearButtonEnabled(False)
         self.inserir_token_yandex.setObjectName("inserir_token_yandex")
         self.verticalLayout_11.addWidget(self.inserir_token_yandex)
+        self.inserir_key_google = QtWidgets.QLineEdit(self.frame_2)
+        self.inserir_key_google.setMinimumSize(QtCore.QSize(0, 20))
+        self.inserir_key_google.setStyleSheet("QLineEdit{\n"
+"border: 2px solid rgb(45,45,45);\n"
+"border-radius: 5px;\n"
+"padding: 10px;\n"
+"background-color: rgb(30,30,30);\n"
+"    color: rgb(203, 203, 203);\n"
+"font: 13px Courier New;\n"
+"}\n"
+"QLineEdit:hover{\n"
+"border: 2px solid rgb(55,55,55);\n"
+"}\n"
+"QLineEdit:focus{\n"
+"border: 2px solid  rgb(120,0,0);\n"
+"    color: rgb(120,0,0);\n"
+"}")
+        self.inserir_key_google.setAlignment(QtCore.Qt.AlignCenter)
+        self.inserir_key_google.setClearButtonEnabled(False)
+        self.inserir_key_google.setObjectName("inserir_key_google")
+        self.verticalLayout_11.addWidget(self.inserir_key_google)
         self.horizontalLayout_5.addWidget(self.frame_2)
-        self.verticalLayout_4.addWidget(self.frame_configs_bot)
-        self.botao_start_bot = QtWidgets.QPushButton(self.base_home)
-        self.botao_start_bot.setMinimumSize(QtCore.QSize(0, 10))
+        self.verticalLayout_2.addWidget(self.frame_configs_bot)
+        self.botao_start_bot = QtWidgets.QPushButton(self.pagina_home)
+        self.botao_start_bot.setMinimumSize(QtCore.QSize(0, 35))
         self.botao_start_bot.setStyleSheet("QPushButton {\n"
 "    background-color:transparent;\n"
 "    background-repeat: no-repeat;\n"
@@ -571,8 +626,7 @@ class Ui_MainWindow(object):
 "    background-color: rgb(120,0,0);\n"
 "}")
         self.botao_start_bot.setObjectName("botao_start_bot")
-        self.verticalLayout_4.addWidget(self.botao_start_bot)
-        self.verticalLayout_2.addWidget(self.base_home)
+        self.verticalLayout_2.addWidget(self.botao_start_bot)
         self.stackedWidget.addWidget(self.pagina_home)
         self.pagina_bot = QtWidgets.QWidget()
         self.pagina_bot.setObjectName("pagina_bot")
@@ -580,7 +634,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_3.setObjectName("verticalLayout_3")
         self.frame_entradas_bot = QtWidgets.QFrame(self.pagina_bot)
         self.frame_entradas_bot.setMaximumSize(QtCore.QSize(16777215, 180))
-        self.frame_entradas_bot.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_entradas_bot.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.frame_entradas_bot.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_entradas_bot.setObjectName("frame_entradas_bot")
         self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.frame_entradas_bot)
@@ -680,6 +734,49 @@ class Ui_MainWindow(object):
         self.verticalLayout_8.setContentsMargins(9, 0, 9, 0)
         self.verticalLayout_8.setSpacing(3)
         self.verticalLayout_8.setObjectName("verticalLayout_8")
+        self.frame_4 = QtWidgets.QFrame(self.frame_enviar_mensagem)
+        self.frame_4.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.frame_4.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_4.setObjectName("frame_4")
+        self.horizontalLayout_9 = QtWidgets.QHBoxLayout(self.frame_4)
+        self.horizontalLayout_9.setObjectName("horizontalLayout_9")
+        self.botao_carregar_db = QtWidgets.QPushButton(self.frame_4)
+        self.botao_carregar_db.setStyleSheet("QPushButton {\n"
+"    background-color:transparent;\n"
+"    background-repeat: no-repeat;\n"
+"    background-position: center;\n"
+"    border: 2px solid rgb(45,45,45);\n"
+"border-radius: 5px;\n"
+"    color: rgb(255, 255, 255);\n"
+"    font: 15px SegoeUIl, bold;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(120,0,0);\n"
+"}\n"
+"QPushButton:pressed {\n"
+"    background-color: rgb(120,0,0);\n"
+"}")
+        self.botao_carregar_db.setObjectName("botao_carregar_db")
+        self.horizontalLayout_9.addWidget(self.botao_carregar_db)
+        self.botao_fechar_db = QtWidgets.QPushButton(self.frame_4)
+        self.botao_fechar_db.setStyleSheet("QPushButton {\n"
+"    background-color:transparent;\n"
+"    background-repeat: no-repeat;\n"
+"    background-position: center;\n"
+"    border: 2px solid rgb(45,45,45);\n"
+"border-radius: 5px;\n"
+"    color: rgb(255, 255, 255);\n"
+"    font: 15px SegoeUIl, bold;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(120,0,0);\n"
+"}\n"
+"QPushButton:pressed {\n"
+"    background-color: rgb(120,0,0);\n"
+"}")
+        self.botao_fechar_db.setObjectName("botao_fechar_db")
+        self.horizontalLayout_9.addWidget(self.botao_fechar_db)
+        self.verticalLayout_8.addWidget(self.frame_4)
         self.texto_enviar_mensagem = QtWidgets.QTextEdit(self.frame_enviar_mensagem)
         self.texto_enviar_mensagem.setMaximumSize(QtCore.QSize(16777215, 250))
         self.texto_enviar_mensagem.setStyleSheet("QTextEdit{\n"
@@ -726,7 +823,45 @@ class Ui_MainWindow(object):
         self.frame_mensagens_recebidas.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_mensagens_recebidas.setObjectName("frame_mensagens_recebidas")
         self.verticalLayout_9 = QtWidgets.QVBoxLayout(self.frame_mensagens_recebidas)
+        self.verticalLayout_9.setContentsMargins(-1, 2, -1, -1)
+        self.verticalLayout_9.setSpacing(6)
         self.verticalLayout_9.setObjectName("verticalLayout_9")
+        self.linha_mensagem = QtWidgets.QLineEdit(self.frame_mensagens_recebidas)
+        self.linha_mensagem.setStyleSheet("QLineEdit{\n"
+"border: 2px solid rgb(45,45,45);\n"
+"border-radius: 5px;\n"
+"padding: 10px;\n"
+"background-color: rgb(30,30,30);\n"
+"    color: rgb(203, 203, 203);\n"
+"font: 15px Courier New;\n"
+"}\n"
+"QLineEdit:hover{\n"
+"border: 2px solid rgb(55,55,55);\n"
+"}\n"
+"QLineEdit:focus{\n"
+"border: 2px solid  rgb(120,0,0);\n"
+"    color: rgb(120,0,0);\n"
+"}")
+        self.linha_mensagem.setObjectName("linha_mensagem")
+        self.verticalLayout_9.addWidget(self.linha_mensagem)
+        self.botao_receber_mensagens = QtWidgets.QPushButton(self.frame_mensagens_recebidas)
+        self.botao_receber_mensagens.setStyleSheet("QPushButton {\n"
+"    background-color:transparent;\n"
+"    background-repeat: no-repeat;\n"
+"    background-position: center;\n"
+"    border: 2px solid rgb(45,45,45);\n"
+"border-radius: 5px;\n"
+"    color: rgb(255, 255, 255);\n"
+"    font: 15px SegoeUIl, bold;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(120,0,0);\n"
+"}\n"
+"QPushButton:pressed {\n"
+"    background-color: rgb(120,0,0);\n"
+"}")
+        self.botao_receber_mensagens.setObjectName("botao_receber_mensagens")
+        self.verticalLayout_9.addWidget(self.botao_receber_mensagens)
         self.mensagens_recebidas = QtWidgets.QTextEdit(self.frame_mensagens_recebidas)
         self.mensagens_recebidas.setStyleSheet("QTextEdit{\n"
 "border: 2px solid rgb(45,45,45);\n"
@@ -754,13 +889,65 @@ class Ui_MainWindow(object):
         self.verticalLayout_10.setSpacing(0)
         self.verticalLayout_10.setObjectName("verticalLayout_10")
         self.frame_botoes_database = QtWidgets.QFrame(self.pagina_database)
-        self.frame_botoes_database.setMaximumSize(QtCore.QSize(16777215, 50))
+        self.frame_botoes_database.setMaximumSize(QtCore.QSize(16777215, 40))
         self.frame_botoes_database.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.frame_botoes_database.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_botoes_database.setObjectName("frame_botoes_database")
         self.horizontalLayout_6 = QtWidgets.QHBoxLayout(self.frame_botoes_database)
+        self.horizontalLayout_6.setContentsMargins(-1, 0, -1, 0)
         self.horizontalLayout_6.setObjectName("horizontalLayout_6")
-        self.comboBox_seleciona_tabela = QtWidgets.QComboBox(self.frame_botoes_database)
+        self.botao_carregar_database = QtWidgets.QPushButton(self.frame_botoes_database)
+        self.botao_carregar_database.setStyleSheet("QPushButton {\n"
+"    background-color:transparent;\n"
+"    background-repeat: no-repeat;\n"
+"    background-position: center;\n"
+"    border: 2px solid rgb(45,45,45);\n"
+"border-radius: 5px;\n"
+"    color: rgb(255, 255, 255);\n"
+"    font: 20px SegoeUIl, bold;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(120,0,0);\n"
+"}\n"
+"QPushButton:pressed {\n"
+"    background-color: rgb(120,0,0);\n"
+"}")
+        self.botao_carregar_database.setObjectName("botao_carregar_database")
+        self.horizontalLayout_6.addWidget(self.botao_carregar_database)
+        self.botao_fechar_database = QtWidgets.QPushButton(self.frame_botoes_database)
+        self.botao_fechar_database.setStyleSheet("QPushButton {\n"
+"    background-color:transparent;\n"
+"    background-repeat: no-repeat;\n"
+"    background-position: center;\n"
+"    border: 2px solid rgb(45,45,45);\n"
+"border-radius: 5px;\n"
+"    color: rgb(255, 255, 255);\n"
+"    font: 20px SegoeUIl, bold;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(120,0,0);\n"
+"}\n"
+"QPushButton:pressed {\n"
+"    background-color: rgb(120,0,0);\n"
+"}")
+        self.botao_fechar_database.setObjectName("botao_fechar_database")
+        self.horizontalLayout_6.addWidget(self.botao_fechar_database)
+        self.verticalLayout_10.addWidget(self.frame_botoes_database)
+        self.frame_tabela_database = QtWidgets.QFrame(self.pagina_database)
+        self.frame_tabela_database.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.frame_tabela_database.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_tabela_database.setObjectName("frame_tabela_database")
+        self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.frame_tabela_database)
+        self.verticalLayout_4.setObjectName("verticalLayout_4")
+        self.frame_3 = QtWidgets.QFrame(self.frame_tabela_database)
+        self.frame_3.setMinimumSize(QtCore.QSize(0, 20))
+        self.frame_3.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.frame_3.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_3.setObjectName("frame_3")
+        self.horizontalLayout_8 = QtWidgets.QHBoxLayout(self.frame_3)
+        self.horizontalLayout_8.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_8.setObjectName("horizontalLayout_8")
+        self.comboBox_seleciona_tabela = QtWidgets.QComboBox(self.frame_3)
         self.comboBox_seleciona_tabela.setStyleSheet("QComboBox {\n"
 "background-color:transparent;\n"
 "    background-repeat: no-repeat;\n"
@@ -778,8 +965,8 @@ class Ui_MainWindow(object):
 "}")
         self.comboBox_seleciona_tabela.setObjectName("comboBox_seleciona_tabela")
         self.comboBox_seleciona_tabela.addItem("")
-        self.horizontalLayout_6.addWidget(self.comboBox_seleciona_tabela)
-        self.botao_deletar_linha = QtWidgets.QPushButton(self.frame_botoes_database)
+        self.horizontalLayout_8.addWidget(self.comboBox_seleciona_tabela)
+        self.botao_deletar_linha = QtWidgets.QPushButton(self.frame_3)
         self.botao_deletar_linha.setStyleSheet("QPushButton {\n"
 "    background-color:transparent;\n"
 "    background-repeat: no-repeat;\n"
@@ -796,14 +983,9 @@ class Ui_MainWindow(object):
 "    background-color: rgb(120,0,0);\n"
 "}")
         self.botao_deletar_linha.setObjectName("botao_deletar_linha")
-        self.horizontalLayout_6.addWidget(self.botao_deletar_linha)
-        self.verticalLayout_10.addWidget(self.frame_botoes_database)
-        self.frame_tabela_database = QtWidgets.QFrame(self.pagina_database)
-        self.frame_tabela_database.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.frame_tabela_database.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_tabela_database.setObjectName("frame_tabela_database")
+        self.horizontalLayout_8.addWidget(self.botao_deletar_linha)
+        self.verticalLayout_4.addWidget(self.frame_3)
         self.tabela_dados_db = QtWidgets.QTableView(self.frame_tabela_database)
-        self.tabela_dados_db.setGeometry(QtCore.QRect(20, 0, 741, 482))
         self.tabela_dados_db.setStyleSheet("QHeaderView {\n"
 "background: rgb(30, 30, 30);\n"
 "}\n"
@@ -843,6 +1025,7 @@ class Ui_MainWindow(object):
         self.tabela_dados_db.setGridStyle(QtCore.Qt.SolidLine)
         self.tabela_dados_db.setObjectName("tabela_dados_db")
         self.tabela_dados_db.horizontalHeader().setDefaultSectionSize(150)
+        self.verticalLayout_4.addWidget(self.tabela_dados_db)
         self.verticalLayout_10.addWidget(self.frame_tabela_database)
         self.stackedWidget.addWidget(self.pagina_database)
         self.pagina_deepnude = QtWidgets.QWidget()
@@ -867,7 +1050,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_25.setObjectName("horizontalLayout_25")
         self.imagem_deepnude_normal = QtWidgets.QLabel(self.frame_imagem_normal)
         self.imagem_deepnude_normal.setText("")
-        self.imagem_deepnude_normal.setPixmap(QtGui.QPixmap("bot_files/images/bg1.png"))
+        self.imagem_deepnude_normal.setPixmap(QtGui.QPixmap("program_functions/images/bg1.png"))
         self.imagem_deepnude_normal.setAlignment(QtCore.Qt.AlignCenter)
         self.imagem_deepnude_normal.setObjectName("imagem_deepnude_normal")
         self.horizontalLayout_25.addWidget(self.imagem_deepnude_normal)
@@ -880,24 +1063,24 @@ class Ui_MainWindow(object):
         self.horizontalLayout_24.setObjectName("horizontalLayout_24")
         self.imagem_deepnude_renderizada = QtWidgets.QLabel(self.frame_imagem_renderizada)
         self.imagem_deepnude_renderizada.setText("")
-        self.imagem_deepnude_renderizada.setPixmap(QtGui.QPixmap("bot_files/images/bg2.png"))
+        self.imagem_deepnude_renderizada.setPixmap(QtGui.QPixmap("program_functions/images/bg2.png"))
         self.imagem_deepnude_renderizada.setAlignment(QtCore.Qt.AlignCenter)
         self.imagem_deepnude_renderizada.setObjectName("imagem_deepnude_renderizada")
         self.horizontalLayout_24.addWidget(self.imagem_deepnude_renderizada)
         self.horizontalLayout_22.addWidget(self.frame_imagem_renderizada)
         self.verticalLayout_26.addWidget(self.frame_deepnude)
         self.frame_botoes_deepnude = QtWidgets.QFrame(self.pagina_deepnude)
-        self.frame_botoes_deepnude.setMinimumSize(QtCore.QSize(0, 50))
-        self.frame_botoes_deepnude.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.frame_botoes_deepnude.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_botoes_deepnude.setMinimumSize(QtCore.QSize(0, 25))
+        self.frame_botoes_deepnude.setMaximumSize(QtCore.QSize(16777215, 25))
+        self.frame_botoes_deepnude.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.frame_botoes_deepnude.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_botoes_deepnude.setObjectName("frame_botoes_deepnude")
         self.horizontalLayout_23 = QtWidgets.QHBoxLayout(self.frame_botoes_deepnude)
-        self.horizontalLayout_23.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_23.setSpacing(6)
+        self.horizontalLayout_23.setContentsMargins(22, 0, 25, 0)
+        self.horizontalLayout_23.setSpacing(50)
         self.horizontalLayout_23.setObjectName("horizontalLayout_23")
         self.botao_imagem_deepnude_2 = QtWidgets.QPushButton(self.frame_botoes_deepnude)
-        self.botao_imagem_deepnude_2.setMinimumSize(QtCore.QSize(0, 50))
+        self.botao_imagem_deepnude_2.setMinimumSize(QtCore.QSize(0, 20))
         self.botao_imagem_deepnude_2.setStyleSheet("QPushButton {\n"
 "    background-color:transparent;\n"
 "    background-repeat: no-repeat;\n"
@@ -916,7 +1099,7 @@ class Ui_MainWindow(object):
         self.botao_imagem_deepnude_2.setObjectName("botao_imagem_deepnude_2")
         self.horizontalLayout_23.addWidget(self.botao_imagem_deepnude_2)
         self.botao_criar_deepnude_2 = QtWidgets.QPushButton(self.frame_botoes_deepnude)
-        self.botao_criar_deepnude_2.setMinimumSize(QtCore.QSize(0, 50))
+        self.botao_criar_deepnude_2.setMinimumSize(QtCore.QSize(0, 20))
         self.botao_criar_deepnude_2.setStyleSheet("QPushButton {\n"
 "    background-color:transparent;\n"
 "    background-repeat: no-repeat;\n"
@@ -1180,7 +1363,7 @@ class Ui_MainWindow(object):
         self.label_banimento_automatico_3.setObjectName("label_banimento_automatico_3")
         self.label_3 = QtWidgets.QLabel(self.frame)
         self.label_3.setGeometry(QtCore.QRect(160, 20, 411, 91))
-        self.label_3.setStyleSheet("image: url(:/logo_telegram/bot/images/telegram_logo.png);")
+        self.label_3.setStyleSheet("image: url(:/logo_telegram/program_functions/images//telegram_logo.png);")
         self.label_3.setText("")
         self.label_3.setObjectName("label_3")
         self.verticalLayout_27.addWidget(self.frame)
@@ -1227,37 +1410,46 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(3)
+        self.stackedWidget.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Manicomio Artifical Inteligence | Telegram Bot"))
-        self.inserir_token_bot.setText(_translate("MainWindow", "token do bot"))
-        self.inserir_canal_bot.setText(_translate("MainWindow", "id canal bot"))
-        self.inserir_id_pessoal_bot.setText(_translate("MainWindow", "id pessoal telegram"))
-        self.inserir_id_backups.setText(_translate("MainWindow", "id  local  backups"))
+        self.inserir_token_bot.setText(_translate("MainWindow", "token  bot"))
+        self.inserir_canal_bot.setText(_translate("MainWindow", "id canal "))
+        self.inserir_id_pessoal_bot.setText(_translate("MainWindow", "id pessoal"))
+        self.inserir_id_backups.setText(_translate("MainWindow", "id backups"))
         self.inserir_token_dropbox.setText(_translate("MainWindow", "token dropbox"))
         self.inserir_token_giphy.setText(_translate("MainWindow", "token giphy"))
+        self.inserir_token_bitly.setText(_translate("MainWindow", "token bitly"))
+        self.inserir_id_google.setText(_translate("MainWindow", "id google"))
         self.inserir_token_weather.setText(_translate("MainWindow", "token hgbrasilWeater"))
         self.inserir_token_imgur.setText(_translate("MainWindow", "token imgur"))
         self.inserir_token_yandex.setText(_translate("MainWindow", "token yandex"))
-        self.botao_start_bot.setText(_translate("MainWindow", "start artificial inteligence telegram bot"))
+        self.inserir_key_google.setText(_translate("MainWindow", "key google"))
+        self.botao_start_bot.setText(_translate("MainWindow", "start artificial inteligence"))
         self.comboBox_grupos_bot.setItemText(0, _translate("MainWindow", "      selecione"))
         self.botao_enviar_imagem_bot.setText(_translate("MainWindow", "enviar imagem"))
         self.botao_enviar_video_bot.setText(_translate("MainWindow", "enviar video"))
         self.botao_enviar_documento_bot.setText(_translate("MainWindow", "enviar documento"))
+        self.botao_carregar_db.setText(_translate("MainWindow", "carregar database"))
+        self.botao_fechar_db.setText(_translate("MainWindow", "fechar database"))
         self.texto_enviar_mensagem.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'Courier New\'; font-size:15px; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:15px;\">Digite sua mensagem</span></p></body></html>"))
         self.botao_enviar_mensagem.setText(_translate("MainWindow", "enviar mensagem"))
+        self.linha_mensagem.setText(_translate("MainWindow", "Envie sua mensagem usando Enter"))
+        self.botao_receber_mensagens.setText(_translate("MainWindow", "receber mensagens"))
         self.mensagens_recebidas.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'Courier New\'; font-size:15px; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:15px;\">Mensagens...</span></p></body></html>"))
+        self.botao_carregar_database.setText(_translate("MainWindow", "carregar database"))
+        self.botao_fechar_database.setText(_translate("MainWindow", "fechar database"))
         self.comboBox_seleciona_tabela.setItemText(0, _translate("MainWindow", "                      selecione a tabela"))
         self.botao_deletar_linha.setText(_translate("MainWindow", "deletar linha"))
         self.botao_imagem_deepnude_2.setText(_translate("MainWindow", "carregar imagem"))

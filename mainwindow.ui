@@ -456,7 +456,7 @@ QPushButton:pressed {
        <item>
         <widget class="QStackedWidget" name="stackedWidget">
          <property name="currentIndex">
-          <number>0</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="pagina_home">
           <property name="styleSheet">
@@ -483,7 +483,7 @@ QPushButton:pressed {
              <property name="minimumSize">
               <size>
                <width>0</width>
-               <height>300</height>
+               <height>380</height>
               </size>
              </property>
              <property name="autoFillBackground">
@@ -809,7 +809,7 @@ border: 2px solid  rgb(120,0,0);
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLineEdit" name="inserir_id_pessoal_bot_2">
+                  <widget class="QLineEdit" name="inserir_token_bitly">
                    <property name="minimumSize">
                     <size>
                      <width>0</width>
@@ -845,7 +845,7 @@ border: 2px solid  rgb(120,0,0);
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLineEdit" name="inserir_canal_bot_2">
+                  <widget class="QLineEdit" name="inserir_id_google">
                    <property name="minimumSize">
                     <size>
                      <width>0</width>
@@ -870,7 +870,7 @@ border: 2px solid  rgb(120,0,0);
 }</string>
                    </property>
                    <property name="text">
-                    <string>NULL</string>
+                    <string>id google</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -1016,15 +1016,57 @@ border: 2px solid  rgb(120,0,0);
                   </widget>
                  </item>
                  <item>
-                  <widget class="QPushButton" name="botao_start_bot">
+                  <widget class="QLineEdit" name="inserir_key_google">
                    <property name="minimumSize">
                     <size>
                      <width>0</width>
-                     <height>43</height>
+                     <height>20</height>
                     </size>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">QPushButton {
+                    <string notr="true">QLineEdit{
+border: 2px solid rgb(45,45,45);
+border-radius: 5px;
+padding: 10px;
+background-color: rgb(30,30,30);
+	color: rgb(203, 203, 203);
+font: 13px Courier New;
+}
+QLineEdit:hover{
+border: 2px solid rgb(55,55,55);
+}
+QLineEdit:focus{
+border: 2px solid  rgb(120,0,0);
+	color: rgb(120,0,0);
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>key google</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="clearButtonEnabled">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="botao_start_bot">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>35</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
 	background-color:transparent;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -1039,16 +1081,10 @@ QPushButton:hover {
 QPushButton:pressed {
 	background-color: rgb(120,0,0);
 }</string>
-                   </property>
-                   <property name="text">
-                    <string>start artificial inteligence</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-             </layout>
+             </property>
+             <property name="text">
+              <string>start artificial inteligence</string>
+             </property>
             </widget>
            </item>
           </layout>
@@ -1064,7 +1100,7 @@ QPushButton:pressed {
               </size>
              </property>
              <property name="frameShape">
-              <enum>QFrame::StyledPanel</enum>
+              <enum>QFrame::NoFrame</enum>
              </property>
              <property name="frameShadow">
               <enum>QFrame::Raised</enum>
@@ -1240,6 +1276,66 @@ QPushButton:pressed {
                   <number>0</number>
                  </property>
                  <item>
+                  <widget class="QFrame" name="frame_4">
+                   <property name="frameShape">
+                    <enum>QFrame::NoFrame</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout_9">
+                    <item>
+                     <widget class="QPushButton" name="botao_carregar_db">
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton {
+	background-color:transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 2px solid rgb(45,45,45);
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+	font: 15px SegoeUIl, bold;
+}
+QPushButton:hover {
+	background-color: rgb(120,0,0);
+}
+QPushButton:pressed {
+	background-color: rgb(120,0,0);
+}</string>
+                      </property>
+                      <property name="text">
+                       <string>carregar database</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="botao_fechar_db">
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton {
+	background-color:transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 2px solid rgb(45,45,45);
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+	font: 15px SegoeUIl, bold;
+}
+QPushButton:hover {
+	background-color: rgb(120,0,0);
+}
+QPushButton:pressed {
+	background-color: rgb(120,0,0);
+}</string>
+                      </property>
+                      <property name="text">
+                       <string>fechar database</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
                   <widget class="QTextEdit" name="texto_enviar_mensagem">
                    <property name="maximumSize">
                     <size>
@@ -1321,6 +1417,60 @@ QPushButton:pressed {
               <enum>QFrame::Raised</enum>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_9">
+              <property name="spacing">
+               <number>6</number>
+              </property>
+              <property name="topMargin">
+               <number>2</number>
+              </property>
+              <item>
+               <widget class="QLineEdit" name="linha_mensagem">
+                <property name="styleSheet">
+                 <string notr="true">QLineEdit{
+border: 2px solid rgb(45,45,45);
+border-radius: 5px;
+padding: 10px;
+background-color: rgb(30,30,30);
+	color: rgb(203, 203, 203);
+font: 15px Courier New;
+}
+QLineEdit:hover{
+border: 2px solid rgb(55,55,55);
+}
+QLineEdit:focus{
+border: 2px solid  rgb(120,0,0);
+	color: rgb(120,0,0);
+}</string>
+                </property>
+                <property name="text">
+                 <string>Envie sua mensagem usando Enter</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="botao_receber_mensagens">
+                <property name="styleSheet">
+                 <string notr="true">QPushButton {
+	background-color:transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 2px solid rgb(45,45,45);
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+	font: 15px SegoeUIl, bold;
+}
+QPushButton:hover {
+	background-color: rgb(120,0,0);
+}
+QPushButton:pressed {
+	background-color: rgb(120,0,0);
+}</string>
+                </property>
+                <property name="text">
+                 <string>receber mensagens</string>
+                </property>
+               </widget>
+              </item>
               <item>
                <widget class="QTextEdit" name="mensagens_recebidas">
                 <property name="styleSheet">
@@ -1376,7 +1526,7 @@ p, li { white-space: pre-wrap; }
              <property name="maximumSize">
               <size>
                <width>16777215</width>
-               <height>50</height>
+               <height>40</height>
               </size>
              </property>
              <property name="frameShape">
@@ -1386,34 +1536,14 @@ p, li { white-space: pre-wrap; }
               <enum>QFrame::Raised</enum>
              </property>
              <layout class="QHBoxLayout" name="horizontalLayout_6">
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
               <item>
-               <widget class="QComboBox" name="comboBox_seleciona_tabela">
-                <property name="styleSheet">
-                 <string notr="true">QComboBox {
-background-color:transparent;
-	background-repeat: no-repeat;
-	background-position: center;
-	border: 2px solid rgb(45,45,45);
-border-radius: 5px;
-	color: rgb(255, 255, 255);
-	font: 15px SegoeUIl, bold;
-}
-QComboBox:hover {
-	background-color: rgb(120,0,0);
-}
-QComboBox:pressed {
-	background-color: rgb(120,0,0);
-}</string>
-                </property>
-                <item>
-                 <property name="text">
-                  <string>                      selecione a tabela</string>
-                 </property>
-                </item>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="botao_deletar_linha">
+               <widget class="QPushButton" name="botao_carregar_database">
                 <property name="styleSheet">
                  <string notr="true">QPushButton {
 	background-color:transparent;
@@ -1432,7 +1562,31 @@ QPushButton:pressed {
 }</string>
                 </property>
                 <property name="text">
-                 <string>deletar linha</string>
+                 <string>carregar database</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="botao_fechar_database">
+                <property name="styleSheet">
+                 <string notr="true">QPushButton {
+	background-color:transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 2px solid rgb(45,45,45);
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+	font: 20px SegoeUIl, bold;
+}
+QPushButton:hover {
+	background-color: rgb(120,0,0);
+}
+QPushButton:pressed {
+	background-color: rgb(120,0,0);
+}</string>
+                </property>
+                <property name="text">
+                 <string>fechar database</string>
                 </property>
                </widget>
               </item>
@@ -1447,17 +1601,91 @@ QPushButton:pressed {
              <property name="frameShadow">
               <enum>QFrame::Raised</enum>
              </property>
-             <widget class="QTableView" name="tabela_dados_db">
-              <property name="geometry">
-               <rect>
-                <x>20</x>
-                <y>0</y>
-                <width>741</width>
-                <height>482</height>
-               </rect>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QHeaderView {
+             <layout class="QVBoxLayout" name="verticalLayout_4">
+              <item>
+               <widget class="QFrame" name="frame_3">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>20</height>
+                 </size>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_8">
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QComboBox" name="comboBox_seleciona_tabela">
+                   <property name="styleSheet">
+                    <string notr="true">QComboBox {
+background-color:transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 2px solid rgb(45,45,45);
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+	font: 15px SegoeUIl, bold;
+}
+QComboBox:hover {
+	background-color: rgb(120,0,0);
+}
+QComboBox:pressed {
+	background-color: rgb(120,0,0);
+}</string>
+                   </property>
+                   <item>
+                    <property name="text">
+                     <string>                      selecione a tabela</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="botao_deletar_linha">
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton {
+	background-color:transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 2px solid rgb(45,45,45);
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+	font: 20px SegoeUIl, bold;
+}
+QPushButton:hover {
+	background-color: rgb(120,0,0);
+}
+QPushButton:pressed {
+	background-color: rgb(120,0,0);
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>deletar linha</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QTableView" name="tabela_dados_db">
+                <property name="styleSheet">
+                 <string notr="true">QHeaderView {
 background: rgb(30, 30, 30);
 }
 QHeaderView::section{
@@ -1492,17 +1720,19 @@ border: 2px solid  rgb(120,0,0);
 	color: rgb(120,0,0);
 }
 * { gridline-color: gray }</string>
-              </property>
-              <property name="frameShape">
-               <enum>QFrame::NoFrame</enum>
-              </property>
-              <property name="gridStyle">
-               <enum>Qt::SolidLine</enum>
-              </property>
-              <attribute name="horizontalHeaderDefaultSectionSize">
-               <number>150</number>
-              </attribute>
-             </widget>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="gridStyle">
+                 <enum>Qt::SolidLine</enum>
+                </property>
+                <attribute name="horizontalHeaderDefaultSectionSize">
+                 <number>150</number>
+                </attribute>
+               </widget>
+              </item>
+             </layout>
             </widget>
            </item>
           </layout>

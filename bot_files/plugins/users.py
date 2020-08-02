@@ -20,6 +20,7 @@ from bot_files.config import bot, version, bot_username, git_repo,logs,sudoers
 import sqlite3
 import os
 from bot_files.plugins.admins import is_admin
+from main import *
 
 
 
