@@ -20,7 +20,9 @@ import png
 import os
 import pyqrcode
 import time
+import requests
 from spellchecker import SpellChecker
+from PIL import Image, ImageDraw, ImageFont
 #para o sistema de reconhecimento /recog
 import cvlib as cv
 from cvlib.object_detection import draw_bbox
@@ -32,6 +34,45 @@ from io import BytesIO
 
 async def extras(msg):
     if msg.get('text'):
+        #clima
+        if msg['text'].startswith('/clima'):
+            if msg['text'][7:] == '':
+                res = '*Uso:* `/clima <cidade>` - _Obtem informações meteorológicas da cidade._'
+            else:
+                cidade = msg['text'][7:]
+                try:
+                    key = keys['token_weather']
+                    url = 'https://api.hgbrasil.com/weather'
+                    fields = "only_results,temp,city_name,forecast,max,min,date"
+                    data = {'key': key, 'fields': fields, 'city_name': cidade}
+                    req = requests.get(url, data=data, timeout=3000)
+                    json = req.json()
+                    await bot.sendMessage(msg['chat']['id'], f"`Cidade:`{json['city_name']}\n`Temperatura:`{json['temp']}°C\n`Min:`{json['forecast'][0]['min']}°C\n`Max:`{json['forecast'][0]['max']}°C",'markdown',reply_to_message_id=msg['message_id'])
+                except Exception as e:
+                    #print(e)
+                    await bot.sendMessage(msg['chat']['id'], "`Não foi possivel obter a previsão do tempo ou deu um erro, tente mais tarde`",'markdown', reply_to_message_id=msg['message_id'])
+                    pass
+        if msg['text'].lower().startswith('clima'):
+            if msg['text'][:6] == '':
+                res = '*Uso:* `/clima <cidade>` - _Obtem informações meteorológicas da cidade._'
+            else:
+                cidade = msg['text'][6:]
+                try:
+                    url = 'https://api.hgbrasil.com/weather'
+                    key = '0418e7f0'
+                    fields = "only_results,temp,city_name,forecast,max,min,date"
+                    data = {'key': key, 'fields': fields, 'city_name': cidade}
+                    req = requests.get(url, data=data, timeout=3000)
+                    json = req.json()
+                    await bot.sendMessage(msg['chat']['id'],
+                                          f"`Cidade:`{json['city_name']}\n`Temperatura:`{json['temp']}°C\n`Min:`{json['forecast'][0]['min']}°C\n`Max:`{json['forecast'][0]['max']}°C",
+                                          'markdown', reply_to_message_id=msg['message_id'])
+                except Exception as e:
+                    #print(e)
+                    await bot.sendMessage(msg['chat']['id'],
+                                          "`Não foi possivel obter a previsão do tempo ou deu um erro, tente mais tarde`",
+                                          'markdown', reply_to_message_id=msg['message_id'])
+                    pass
 
 
         #jsondump
@@ -263,3 +304,60 @@ async def extras(msg):
                                   '***informações que devo aprender***',
                                   'markdown', reply_to_message_id=msg['message_id'])
             pass
+
+
+        #sistema de prints
+        if msg['text'].lower() == 'print' and msg.get('reply_to_message'):
+            texto_repetido = msg['reply_to_message']['text']
+            text = msg['reply_to_message']['text']
+            try:
+                await bot.sendMessage(msg['chat']['id'], '`Tirando print...`','markdown', reply_to_message_id=msg['message_id'])
+                img = Image.new('RGBA', (1000, 1000), (255, 255, 255))  #ele cria esta imagem para nada mas é necessario ela sera substituida, queremos pegar o tamanho do texto
+                draw = ImageDraw.Draw(img)
+                text_size = draw.textsize(text, ImageFont.truetype("arial.ttf", 30))
+                # print(text_size)
+                img2 = Image.new('RGBA', text_size, (255, 255, 255))
+                draw2 = ImageDraw.Draw(img2)
+                draw2.text((1, 1), text[0:45], (0, 0, 0), ImageFont.truetype("arial.ttf", 30))
+                img2.save('bot_files/arquivos/pil_text.png')
+                await bot.sendPhoto(msg['chat']['id'],photo=open('bot_files/arquivos/pil_text.png','rb'), reply_to_message_id=msg['message_id'])
+                os.remove('bot_files/arquivos/pil_text.png')
+            except Exception as e:
+                await bot.sendMessage(msg['chat']['id'], '`diminua seu texto, tente novamente`', 'markdown',
+                                      reply_to_message_id=msg['message_id'])
+                pass
+        if msg['text'].startswith('/print') or msg['text'].startswith('!print'):
+            text = msg['text'][6:]
+            try:
+                await bot.sendMessage(msg['chat']['id'], '`Tirando print...`','markdown', reply_to_message_id=msg['message_id'])
+                img = Image.new('RGBA', (1000, 1000), (255, 255, 255))  #ele cria esta imagem para nada mas é necessario ela sera substituida, queremos pegar o tamanho do texto
+                draw = ImageDraw.Draw(img)
+                text_size = draw.textsize(text, ImageFont.truetype("arial.ttf", 30))
+                # print(text_size)
+                img2 = Image.new('RGBA', text_size, (255, 255, 255))
+                draw2 = ImageDraw.Draw(img2)
+                draw2.text((1, 1), text[0:45], (0, 0, 0), ImageFont.truetype("arial.ttf", 30))
+                img2.save('bot_files/arquivos/pil_text.png')
+                await bot.sendPhoto(msg['chat']['id'],photo=open('bot_files/arquivos/pil_text.png','rb'), reply_to_message_id=msg['message_id'])
+                os.remove('bot_files/arquivos/pil_text.png')
+            except Exception as e:
+                await bot.sendMessage(msg['chat']['id'], '`diminua seu texto, tente novamente`', 'markdown',
+                                      reply_to_message_id=msg['message_id'])
+                pass
+        if msg['text'].startswith('print') and not msg.get('reply_to_message'):
+            text = msg['text'][5:]
+            try:
+                await bot.sendMessage(msg['chat']['id'], '`Tirando print...`','markdown', reply_to_message_id=msg['message_id'])
+                img = Image.new('RGBA', (1000, 1000), (255, 255, 255))  #ele cria esta imagem para nada mas é necessario ela sera substituida, queremos pegar o tamanho do texto
+                draw = ImageDraw.Draw(img)
+                text_size = draw.textsize(text, ImageFont.truetype("arial.ttf", 30))
+                # print(text_size)
+                img2 = Image.new('RGBA', text_size, (255, 255, 255))
+                draw2 = ImageDraw.Draw(img2)
+                draw2.text((2, 1), text[0:45], (0, 0, 0), ImageFont.truetype("arial.ttf", 25))
+                img2.save('bot_files/arquivos/pil_text.png')
+                await bot.sendPhoto(msg['chat']['id'],photo=open('bot_files/arquivos/pil_text.png','rb'), reply_to_message_id=msg['message_id'])
+                os.remove('bot_files/arquivos/pil_text.png')
+            except Exception as e:
+                await bot.sendMessage(msg['chat']['id'], '`diminua seu texto, tente novamente`', 'markdown', reply_to_message_id=msg['message_id'])
+                pass

@@ -23,6 +23,24 @@ async def link_direto(msg):
         token_bitly = keys['token_bitly']
         shortener = Shortener(tokens=token_bitly, max_cache_size=8192)
         if chat_type == 'supergroup':
+            try:#encutador de links com comando /shorten
+                if msg['text'].startswith('/shorten'):
+                    text = msg['text'][9:]
+                    if not text:
+                        await bot.sendMessage(msg['chat']['id'],'*Uso:* `/shorten https://google.com` - _Encurta uma URL. ','Markdown',  reply_to_message_id=msg['message_id'])
+                    else:
+                        #if not text.startswith('http://') or not text.startswith('https://'):
+                            #texto = 'https://' + text
+                        try:
+                            shortener = Shortener(tokens=token_bitly, max_cache_size=8192)
+                            urls = [text]
+                            a = shortener.shorten_urls(urls)
+                            await bot.sendMessage(msg['chat']['id'], '*Link Encurtado:* {}'.format(a[0]), 'Markdown', reply_to_message_id=msg['message_id'])
+                        except:
+                            await bot.sendMessage(msg['chat']['id'], '`Não foi possivel encurtar seu link, tente enviando com http ou https, talves o serviço esteja offline.`', 'Markdown', reply_to_message_id=msg['message_id'])
+            except:
+                pass
+
             try:  # DOCUMENTOS
                 if 'document' in msg.get('reply_to_message') and texto == '/link' or 'document' in msg.get('reply_to_message') and texto == 'link':
                     #if adm['user'] == True:
@@ -99,10 +117,6 @@ async def link_direto(msg):
                         await bot.sendMessage(msg['chat']['id'], '`Não foi possivel encurtar seu link, tente novamente, talves o serviço esteja offline.`', 'Markdown', reply_to_message_id=msg['message_id'])
             except Exception as e:
                 pass
-
-
-
-
 
     except Exception as e:
         pass
