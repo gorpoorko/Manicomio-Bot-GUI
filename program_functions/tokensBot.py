@@ -23,8 +23,8 @@ conexao_sqlite.row_factory = sqlite3.Row
 cursor_sqlite = conexao_sqlite.cursor()
 cursor_sqlite.execute("""SELECT * FROM tokens_bot""")
 tokens = cursor_sqlite.fetchall()
-def tokensBot(self):
 
+def tokensBot(self):
     if tokens != []:
         self.ui.inserir_token_bot.setText('token encontrado')
         self.ui.inserir_canal_bot.setText('token encontrado')

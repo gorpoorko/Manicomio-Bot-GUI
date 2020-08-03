@@ -33,11 +33,11 @@ def settingsBot(self):
     self.ui.botao_inteligencia_global.clicked.connect(lambda: inteligenciaGlobal(self))
     self.ui.botao_sair_grupo.clicked.connect(lambda: sairGrupo(self))
     self.ui.botao_banir_usuario.clicked.connect(lambda: banirUsuario(self))
-
     #slider
     self.ui.slider_frequencia_fala.valueChanged.connect(lambda: frequencia(self))
-
-
+    #inputs
+    self.ui.id_manual_configuracoes.mousePressEvent = lambda a: self.ui.id_manual_configuracoes.clear()
+    self.ui.id_usuario_ban.mousePressEvent = lambda a: self.ui.id_usuario_ban.clear()
 
 
 

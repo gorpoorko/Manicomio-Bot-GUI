@@ -101,6 +101,9 @@ async def link_direto(msg):
                 pass
 
 
+
+
+
     except Exception as e:
         pass
 

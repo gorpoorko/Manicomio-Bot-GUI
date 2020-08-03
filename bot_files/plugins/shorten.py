@@ -26,15 +26,15 @@ async def shorten(msg):
             if not text:
                 await bot.sendMessage(msg['chat']['id'],'*Uso:* `/shorten https://google.com` - _Encurta uma URL. ','Markdown',  reply_to_message_id=msg['message_id'])
             else:
-                if not text.startswith('http://') or not text.startswith('https://'):
-                    texto = 'https://' + text
-                    try:
-                        #sistema do pipy acima
-                        shortener = Shortener(tokens=token_bitly, max_cache_size=8192)
-                        urls = [texto]
-                        a = shortener.shorten_urls(urls)
-                        await bot.sendMessage(msg['chat']['id'], '*Link Encurtado:* {}'.format(a[0]), 'Markdown', reply_to_message_id=msg['message_id'])
-                    except:
-                        await bot.sendMessage(msg['chat']['id'], '`Não foi possivel encurtar seu link, tente enviando com http ou https, talves o serviço esteja offline.`', 'Markdown', reply_to_message_id=msg['message_id'])
+                #if not text.startswith('http://') or not text.startswith('https://'):
+                    #texto = 'https://' + text
+                try:
+                    shortener = Shortener(tokens=token_bitly, max_cache_size=8192)
+                    urls = [text]
+                    a = shortener.shorten_urls(urls)
+                    await bot.sendMessage(msg['chat']['id'], '*Link Encurtado:* {}'.format(a[0]), 'Markdown', reply_to_message_id=msg['message_id'])
+                except:
+                    await bot.sendMessage(msg['chat']['id'], '`Não foi possivel encurtar seu link, tente enviando com http ou https, talves o serviço esteja offline.`', 'Markdown', reply_to_message_id=msg['message_id'])
+                
             return True
 
