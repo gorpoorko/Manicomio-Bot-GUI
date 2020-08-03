@@ -17,6 +17,7 @@ import aiohttp
 import wikipedia
 from datetime import datetime
 import png
+import sqlite3
 import os
 import pyqrcode
 import time
@@ -33,7 +34,23 @@ import json
 from io import BytesIO
 
 async def extras(msg):
+
+    #exibe todas imagens cadastradas
     if msg.get('text'):
+
+        #envia todas imagens cadastradas na db
+        if msg.get('text') == 'todas imagens':
+                conexao_sqlite = sqlite3.connect('bot_files/bot_database.db')
+                conexao_sqlite.row_factory = sqlite3.Row
+                cursor_sqlite = conexao_sqlite.cursor()
+                cursor_sqlite.execute("""SELECT * FROM mensagens; """)
+                mensagens_sqlite = cursor_sqlite.fetchall()
+                for mensagem in mensagens_sqlite:
+                    try:
+                        if mensagem['tipo'] == 'imagem':
+                            await bot.sendPhoto(msg['chat']['id'], photo=f"{mensagem['mensagem']}")
+                    except:
+                        pass
         #clima
         if msg['text'].startswith('/clima'):
             if msg['text'][7:] == '':
