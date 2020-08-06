@@ -4,7 +4,7 @@ import sqlite3
 #dados anteriores---------------------->
 
 try:
-    conn = sqlite3.connect('bot_files/bot_database.db')
+    conn = sqlite3.connect('bot_database.db')
     cursor = conn.cursor()
     try:
         # seta a frequencia com 1 para o bot sempre falar pouco quando iniciado
@@ -58,7 +58,7 @@ except:
 
 #CRIAÇÃO DAS DATABASES DE LOGS---------------------------------------------------------------------------------------------------------------------->
 
-conn_logs = sqlite3.connect('bot_files/bot_database_logs.db')
+conn_logs = sqlite3.connect('bot_database_logs.db')
 cursor_logs = conn_logs.cursor()
 # tabela dos LOGS DOS USUARIOS | tudo que é enviado pelos usuarios ficam nestes logs
 cursor_logs.execute("""  CREATE TABLE IF NOT EXISTS mensagens (int_id integer not null primary key autoincrement,grupo varchar(5000),tipo_grupo varchar(5000), id_grupo varchar(5000),usuario varchar(500), id_usuario varchar(500),linguagem varchar(5000), tipo varchar(5000),data varchar(5000),id_mensagem varchar(500), mensagem varchar(5000));  """)
@@ -73,7 +73,7 @@ conn_logs.close()
 
 
 #tabelas essenciais para gerenciamento de grupos ---------------------------------------->
-conn = sqlite3.connect('bot_files/bot_database.db')
+conn = sqlite3.connect('bot_database.db')
 cursor = conn.cursor()
 
 cursor.execute('''CREATE TABLE IF NOT EXISTS chats (chat_id INTEGER,

@@ -11,7 +11,7 @@
 #     [+]        Github Gorpo Dev: https://github.com/gorpo     [+]
 
 
-from bot_files.config import bot
+from config import bot
 
 async def calculadora(msg):
     if msg.get('text'):

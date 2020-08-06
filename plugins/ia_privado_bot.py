@@ -16,7 +16,7 @@ import speech_recognition as sr
 from pydub import AudioSegment
 
 import sqlite3
-from bot_files.config import bot, sudoers, logs, bot_username
+from config import bot, sudoers, logs, bot_username
 
 async def ia_privado_bot(msg):
     chat_id = msg['chat']['id']
@@ -24,11 +24,11 @@ async def ia_privado_bot(msg):
     if chat_type == 'private':
         try:
             if msg.get('voice'):
-                await bot.download_file(msg['voice']['file_id'], 'bot_files/arquivos/audio_usuario_db.ogg')
-                sound = AudioSegment.from_file("bot_files/arquivos/audio_usuario_db.ogg")
-                sound.export("bot_files/arquivos/audio_usuario_db.wav", format="wav", bitrate="128k")
+                await bot.download_file(msg['voice']['file_id'], 'arquivos/audio_usuario_db.ogg')
+                sound = AudioSegment.from_file("arquivos/audio_usuario_db.ogg")
+                sound.export("arquivos/audio_usuario_db.wav", format="wav", bitrate="128k")
                 r = sr.Recognizer()
-                with sr.WavFile('bot_files/arquivos/audio_usuario_db.wav') as source:
+                with sr.WavFile('arquivos/audio_usuario_db.wav') as source:
                     audio = r.record(source)
                 texto = r.recognize_google(audio, language='pt-BR')
                 await bot.sendMessage(chat_id, f"`{msg['from']['first_name']} disse:`\n```----  {texto}```", 'markdown',reply_to_message_id=msg['message_id'])
@@ -37,7 +37,7 @@ async def ia_privado_bot(msg):
                     await bot.sendMessage(chat_id, f"@{msg['from']['first_name']} você esta tentando roubar a TCXS Store, cara vou pegar seu ip e te hackear agora mesmo!!! ", 'markdown',reply_to_message_id=msg['message_id'])
 
                 #sistema de envio de mensagens automaticas randomicas com base na database
-                conexao_sqlite = sqlite3.connect('bot_files/bot_database.db')
+                conexao_sqlite = sqlite3.connect('bot_database.db')
                 conexao_sqlite.row_factory = sqlite3.Row
                 cursor_sqlite = conexao_sqlite.cursor()
                 cursor_sqlite.execute("""SELECT * FROM mensagens; """)

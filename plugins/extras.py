@@ -12,7 +12,7 @@
 
 
 import random
-from bot_files.config import bot,  bot_username, keys
+from config import bot,  bot_username, keys
 import aiohttp
 import wikipedia
 from datetime import datetime
@@ -40,7 +40,7 @@ async def extras(msg):
 
         #envia todas imagens cadastradas na db
         if msg.get('text') == 'todas imagens':
-                conexao_sqlite = sqlite3.connect('bot_files/bot_database.db')
+                conexao_sqlite = sqlite3.connect('bot_database.db')
                 conexao_sqlite.row_factory = sqlite3.Row
                 cursor_sqlite = conexao_sqlite.cursor()
                 cursor_sqlite.execute("""SELECT * FROM mensagens; """)
@@ -190,12 +190,12 @@ async def extras(msg):
                                       'markdown', reply_to_message_id=msg['message_id'])
             codigo = msg['text'][8:]
             qrcode = pyqrcode.create(codigo)
-            qrcode.png('bot_files/arquivos/qrcode.png', scale=10)
+            qrcode.png('arquivos/qrcode.png', scale=10)
             await bot.editMessageText((msg['chat']['id'], a['message_id']),
                                       f"🤖 {msg['from']['first_name']} ***aqui esta seu QrCode***", 'markdown')
-            await bot.sendPhoto(msg['chat']['id'], photo=open('bot_files/arquivos/qrcode.png', 'rb'),
+            await bot.sendPhoto(msg['chat']['id'], photo=open('arquivos/qrcode.png', 'rb'),
                                 reply_to_message_id=msg['message_id'])
-            os.remove('bot_files/arquivos/qrcode.png')
+            os.remove('arquivos/qrcode.png')
 
         # exemplo de animação--->
         if 'aham' in msg['text']:
@@ -271,14 +271,14 @@ async def extras(msg):
             if chat_type == 'supergroup':
                 if 'photo' in msg.get('reply_to_message') and texto.startswith('recog'):
                     id_foto = msg.get('reply_to_message')['photo'][0]['file_id']
-                    await bot.download_file(id_foto,'bot_files/arquivos/recognition.jpg')
-                    image = cv2.imread('bot_files/arquivos/recognition.jpg')
+                    await bot.download_file(id_foto,'arquivos/recognition.jpg')
+                    image = cv2.imread('arquivos/recognition.jpg')
                     bbox, label, conf = cv.detect_common_objects(image)
                     out = draw_bbox(image, bbox, label, conf)
-                    cv2.imwrite("bot_files/arquivos/recognition_out.jpg", out)
-                    await bot.sendPhoto(chat_id,photo=open('bot_files/arquivos/recognition_out.jpg','rb'), reply_to_message_id=msg['message_id'])
-                    os.remove('bot_files/arquivos/recognition.jpg')
-                    os.remove('bot_files/arquivos/recognition_out.jpg')
+                    cv2.imwrite("arquivos/recognition_out.jpg", out)
+                    await bot.sendPhoto(chat_id,photo=open('arquivos/recognition_out.jpg','rb'), reply_to_message_id=msg['message_id'])
+                    os.remove('arquivos/recognition.jpg')
+                    os.remove('arquivos/recognition_out.jpg')
         except:
             pass
 
@@ -336,9 +336,9 @@ async def extras(msg):
                 img2 = Image.new('RGBA', text_size, (255, 255, 255))
                 draw2 = ImageDraw.Draw(img2)
                 draw2.text((1, 1), text[0:45], (0, 0, 0), ImageFont.truetype("arial.ttf", 30))
-                img2.save('bot_files/arquivos/pil_text.png')
-                await bot.sendPhoto(msg['chat']['id'],photo=open('bot_files/arquivos/pil_text.png','rb'), reply_to_message_id=msg['message_id'])
-                os.remove('bot_files/arquivos/pil_text.png')
+                img2.save('arquivos/pil_text.png')
+                await bot.sendPhoto(msg['chat']['id'],photo=open('arquivos/pil_text.png','rb'), reply_to_message_id=msg['message_id'])
+                os.remove('arquivos/pil_text.png')
             except Exception as e:
                 await bot.sendMessage(msg['chat']['id'], '`diminua seu texto, tente novamente`', 'markdown',
                                       reply_to_message_id=msg['message_id'])
@@ -354,9 +354,9 @@ async def extras(msg):
                 img2 = Image.new('RGBA', text_size, (255, 255, 255))
                 draw2 = ImageDraw.Draw(img2)
                 draw2.text((1, 1), text[0:45], (0, 0, 0), ImageFont.truetype("arial.ttf", 30))
-                img2.save('bot_files/arquivos/pil_text.png')
-                await bot.sendPhoto(msg['chat']['id'],photo=open('bot_files/arquivos/pil_text.png','rb'), reply_to_message_id=msg['message_id'])
-                os.remove('bot_files/arquivos/pil_text.png')
+                img2.save('arquivos/pil_text.png')
+                await bot.sendPhoto(msg['chat']['id'],photo=open('arquivos/pil_text.png','rb'), reply_to_message_id=msg['message_id'])
+                os.remove('arquivos/pil_text.png')
             except Exception as e:
                 await bot.sendMessage(msg['chat']['id'], '`diminua seu texto, tente novamente`', 'markdown',
                                       reply_to_message_id=msg['message_id'])
@@ -372,9 +372,9 @@ async def extras(msg):
                 img2 = Image.new('RGBA', text_size, (255, 255, 255))
                 draw2 = ImageDraw.Draw(img2)
                 draw2.text((2, 1), text[0:45], (0, 0, 0), ImageFont.truetype("arial.ttf", 25))
-                img2.save('bot_files/arquivos/pil_text.png')
-                await bot.sendPhoto(msg['chat']['id'],photo=open('bot_files/arquivos/pil_text.png','rb'), reply_to_message_id=msg['message_id'])
-                os.remove('bot_files/arquivos/pil_text.png')
+                img2.save('arquivos/pil_text.png')
+                await bot.sendPhoto(msg['chat']['id'],photo=open('arquivos/pil_text.png','rb'), reply_to_message_id=msg['message_id'])
+                os.remove('arquivos/pil_text.png')
             except Exception as e:
                 await bot.sendMessage(msg['chat']['id'], '`diminua seu texto, tente novamente`', 'markdown', reply_to_message_id=msg['message_id'])
                 pass

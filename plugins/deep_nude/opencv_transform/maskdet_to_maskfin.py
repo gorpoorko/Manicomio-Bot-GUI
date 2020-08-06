@@ -4,7 +4,7 @@ import os
 import random
 
 #My library:
-from bot_files.plugins.deep_nude.opencv_transform.annotation import BodyPart
+from plugins.deep_nude.opencv_transform.annotation import BodyPart
 
 ###
 #

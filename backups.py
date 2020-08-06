@@ -16,9 +16,9 @@ import os
 import time
 import schedule
 from datetime import datetime
-from bot_files.utils import backup_sources
+from utils import backup_sources
 from multiprocessing import Process
-from bot_files.config import backups_chat, backup_hours, na_bot, keys, logs
+from config import backups_chat, backup_hours, na_bot, keys, logs
 import dropbox
 import time
 import os
@@ -46,7 +46,7 @@ def backup_func():
 
     # sistema de verificaçao automatica para banimento no grupo
     try:
-        conexao_sqlite = sqlite3.connect('bot_files/bot_database.db')
+        conexao_sqlite = sqlite3.connect('bot_database.db')
         conexao_sqlite.row_factory = sqlite3.Row
         cursor_sqlite = conexao_sqlite.cursor()
         hoje = datetime.now().strftime('%d/%m/%Y %H:%M:%S')

@@ -11,7 +11,7 @@
 #     [+]        Github Gorpo Dev: https://github.com/gorpo     [+]
 
 
-from bot_files.config import bot, bot_username
+from config import bot, bot_username
 
 
 async def ids(msg):

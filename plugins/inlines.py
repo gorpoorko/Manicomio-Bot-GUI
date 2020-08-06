@@ -18,8 +18,8 @@ import duckpy.aio
 import aiohttp
 from amanobot.exception import TelegramError
 from amanobot.namedtuple import InlineQueryResultArticle, InlineQueryResultPhoto, InputTextMessageContent
-from bot_files.config import bot, bot_username
-from bot_files.plugins.youtube import search_yt
+from config import bot, bot_username
+from plugins.youtube import search_yt
 
 
 geo_ip = 'http://ip-api.com/json/'

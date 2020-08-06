@@ -12,13 +12,13 @@
 
 
 import os
-from bot_files.config import bot, version, bot_username, git_repo, logs,sudoers
+from config import bot, version, bot_username, git_repo, logs,sudoers
 import sqlite3
 from datetime import datetime
 
 async def tcxs(msg):
     #variaveis iniciais---------------------:
-    conexao_sqlite = sqlite3.connect('bot_files/bot_database.db')
+    conexao_sqlite = sqlite3.connect('bot_database.db')
     conexao_sqlite.row_factory = sqlite3.Row
     cursor_sqlite = conexao_sqlite.cursor()
     data = datetime.now().strftime('%d/%m/%Y %H:%M')
@@ -250,7 +250,7 @@ async def tcxs(msg):
         ```
     <Query class="type:x-xmb/folder-pixmap" key="ps1_{nome_xml}" attr="ps1_{nome_xml}" src="xmb://localhost/dev_hdd0/game/TCXSPROJECT/USRDIR/XMLS/PS1/{nome_xml}.xml#ps1_items_link" />```''')
 
-                jon = open("bot_files/arquivos/{}.xml".format(nome_xml), "w")
+                jon = open("arquivos/{}.xml".format(nome_xml), "w")
                 for i in arq:
                     j = i.replace('', '')
                     jon.writelines(j)
@@ -260,9 +260,9 @@ async def tcxs(msg):
                                       reply_to_message_id=msg['message_id'])
 
                 await bot.sendDocument(msg['chat']['id'],
-                                       document=open("bot_files/arquivos/{}.xml".format(nome_xml), 'rb'),
+                                       document=open("arquivos/{}.xml".format(nome_xml), 'rb'),
                                        reply_to_message_id=msg['message_id'])
-                os.remove("bot_files/arquivos/{}.xml".format(nome_xml))
+                os.remove("arquivos/{}.xml".format(nome_xml))
 
             except:
                 instrucao = '''Instruções: 
@@ -331,7 +331,7 @@ async def tcxs(msg):
                 ```
     <Query class="type:x-xmb/folder-pixmap" key="ps2_{nome_xml}" attr="ps2_{nome_xml}" src="xmb://localhost/dev_hdd0/game/TCXSPROJECT/USRDIR/XMLS/PS2/{nome_xml}.xml#ps2_items_link" />```''')
 
-                jon = open("bot_files/arquivos/{}.xml".format(nome_xml), "w")
+                jon = open("arquivos/{}.xml".format(nome_xml), "w")
                 for i in arq:
                     j = i.replace('', '')
                     jon.writelines(j)
@@ -341,9 +341,9 @@ async def tcxs(msg):
                                       reply_to_message_id=msg['message_id'])
 
                 await bot.sendDocument(msg['chat']['id'],
-                                       document=open("bot_files/arquivos/{}.xml".format(nome_xml), 'rb'),
+                                       document=open("arquivos/{}.xml".format(nome_xml), 'rb'),
                                        reply_to_message_id=msg['message_id'])
-                os.remove("bot_files/arquivos/{}.xml".format(nome_xml))
+                os.remove("arquivos/{}.xml".format(nome_xml))
             except:
                 instrucao = '''Instruções: 
             ```
@@ -410,7 +410,7 @@ async def tcxs(msg):
                 ```
     <Query class="type:x-xmb/folder-pixmap" key="psp_{nome_xml}" attr="psp_{nome_xml}" src="xmb://localhost/dev_hdd0/game/TCXSPROJECT/USRDIR/XMLS/PSP/{nome_xml}.xml#psp_items_link" />```''')
 
-                jon = open("bot_files/arquivos/{}.xml".format(nome_xml), "w")
+                jon = open("arquivos/{}.xml".format(nome_xml), "w")
                 for i in arq:
                     j = i.replace('', '')
                     jon.writelines(j)
@@ -421,9 +421,9 @@ async def tcxs(msg):
                                       reply_to_message_id=msg['message_id'])
 
                 await bot.sendDocument(msg['chat']['id'],
-                                       document=open("bot_files/arquivos/{}.xml".format(nome_xml), 'rb'),
+                                       document=open("arquivos/{}.xml".format(nome_xml), 'rb'),
                                        reply_to_message_id=msg['message_id'])
-                os.remove("bot_files/arquivos/{}.xml".format(nome_xml))
+                os.remove("arquivos/{}.xml".format(nome_xml))
             except:
                 instrucao = '''Instruções: 
             ```
@@ -508,7 +508,7 @@ async def tcxs(msg):
              ```
     <Query class="type:x-xmb/folder-pixmap" key="ps3_{nome_xml}" attr="ps3_{nome_xml}" src="xmb://localhost/dev_hdd0/game/TCXSPROJECT/USRDIR/XMLS/PS3/{nome_xml}.xml#ps3_items_link" />```''')
 
-                jon = open("bot_files/arquivos/{}.xml".format(nome_xml), "w")
+                jon = open("arquivos/{}.xml".format(nome_xml), "w")
                 for i in arq:
                     j = i.replace('', '')
                     jon.writelines(j)
@@ -519,9 +519,9 @@ async def tcxs(msg):
                                       reply_to_message_id=msg['message_id'])
 
                 await bot.sendDocument(msg['chat']['id'],
-                                       document=open("bot_files/arquivos/{}.xml".format(nome_xml), 'rb'),
+                                       document=open("arquivos/{}.xml".format(nome_xml), 'rb'),
                                        reply_to_message_id=msg['message_id'])
-                os.remove("bot_files/arquivos/{}.xml".format(nome_xml))
+                os.remove("arquivos/{}.xml".format(nome_xml))
             except:
                 instrucao = '''Instruções: 
          ```

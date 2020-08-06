@@ -25,9 +25,9 @@ from contextlib import redirect_stdout
 from sys import platform
 from amanobot.exception import TelegramError
 from emoji import emojize
-import bot_files.db_handler as db
-from bot_files.utils import backup_sources
-from bot_files.config import bot, bot_id, bot_username, git_repo, sudoers,logs,keys
+import db_handler as db
+from utils import backup_sources
+from config import bot, bot_id, bot_username, git_repo, sudoers,logs,keys
 import subprocess
 import sqlite3
 import dropbox
@@ -39,10 +39,10 @@ async def sudos(msg):
             #apagar as mensagens e backup da db------------------------------->
             if msg['text'].lower() == 'apagar mensagens' or msg['text'].lower() == 'apagar db' or msg['text'].lower() == 'backup db':
                 try:
-                    conexao_sqlite = sqlite3.connect('bot_files/bot_database.db') #conecta a nossa database atual
+                    conexao_sqlite = sqlite3.connect('bot_database.db') #conecta a nossa database atual
                     cursor_sqlite = conexao_sqlite.cursor()
                     t = time.localtime()
-                    nome_bkp = f'bot_files/arquivos/bot_{t[2]}_{t[1]}_{t[0]}.db'
+                    nome_bkp = f'arquivos/bot_{t[2]}_{t[1]}_{t[0]}.db'
                     backup_db = sqlite3.connect(nome_bkp)#backup da database
                     cursor_backup = backup_db.cursor()
                     with backup_db:
@@ -54,7 +54,7 @@ async def sudos(msg):
                     if (cursor_backup):
                         backup_db.close()
                         conexao_sqlite.close()
-                conexao_sqlite = sqlite3.connect('bot_files/bot_database.db')  # conecta a nossa database atual
+                conexao_sqlite = sqlite3.connect('bot_database.db')  # conecta a nossa database atual
                 cursor_sqlite = conexao_sqlite.cursor()
                 cursor_sqlite.execute("""DROP TABLE  mensagens""")
                 cursor_sqlite.execute("""  CREATE TABLE IF NOT EXISTS mensagens  (int_id integer not null primary key autoincrement, 'tipo' TEXT, mensagem TEXT);  """)
@@ -108,7 +108,7 @@ baixar - baixa um documento para o server
 
             elif msg['text'].split()[0] == '!plist' or msg['text'].split()[0] == 'plist':
                 
-                from bot_files.bot import ep, n_ep
+                from bot import ep, n_ep
                 if msg['text'].split(' ', 1)[-1] == 'errors':
                     if n_ep:
                         res = '<b>Tracebacks:</b>\n' + '\n'.join(f"<b>{pname}:</b>\n{html.escape(n_ep[pname])}" for pname in n_ep)
@@ -209,10 +209,10 @@ baixar - baixa um documento para o server
                         proc = subprocess.Popen(text, shell=True,  stdout=subprocess.PIPE, stderr=subprocess.PIPE)
                         stdout, stderr = proc.communicate()
                         #print(stdout)
-                        f =  open('bot_files/arquivos/foo.txt', 'a')
+                        f =  open('arquivos/foo.txt', 'a')
                         f.write(str(stdout.decode('Windows-1252')))
                         f.close()
-                        r = open('bot_files/arquivos/foo.txt','r').readlines()
+                        r = open('arquivos/foo.txt','r').readlines()
                         todas = []
                         separador = ' '
                         for line in r:
@@ -223,7 +223,7 @@ baixar - baixa um documento para o server
                                 todas.append(line1)
                         #print(f'{separador.join(map(str, todas))}')
                         #print(todas)
-                        os.remove('bot_files/arquivos/foo.txt')
+                        os.remove('arquivos/foo.txt')
                         await bot.sendMessage(msg['chat']['id'],f"`{separador.join(map(str, todas))}`",'markdown',  reply_to_message_id=msg['message_id'])
                 return True
 

@@ -14,23 +14,23 @@
 
 import time
 from amanobot.namedtuple import InlineKeyboardMarkup
-from bot_files import keyboard
+import keyboard
 from datetime import datetime
-from bot_files.config import bot, version, bot_username, git_repo,logs,sudoers
+from config import bot, version, bot_username, git_repo,logs,sudoers
 import sqlite3
 import os
-from bot_files.plugins.admins import is_admin
-from main import *
+from plugins.admins import is_admin
+
 
 
 
 async def users(msg):
     # variaveis que iniciam a Database para enviar a att paga pelos BOTOES
-    conexao_sqlite = sqlite3.connect('bot_files/bot_database.db')
+    conexao_sqlite = sqlite3.connect('bot_database.db')
     conexao_sqlite.row_factory = sqlite3.Row
     cursor_sqlite = conexao_sqlite.cursor()
     # database logs ---->
-    conexao_logs = sqlite3.connect('bot_files/bot_database_logs.db')
+    conexao_logs = sqlite3.connect('bot_database_logs.db')
     conexao_logs.row_factory = sqlite3.Row
     cursor_logs = conexao_logs.cursor()
     try:
@@ -49,7 +49,7 @@ async def users(msg):
             if adm['user'] == True:
                 cursor_logs.execute("""SELECT * FROM mensagens ; """)
                 mensagens_logs = cursor_logs.fetchall()
-                arquivo_logs = open('bot_files/arquivos/logs.txt', 'a',encoding='utf-8')
+                arquivo_logs = open('arquivos/logs.txt', 'a',encoding='utf-8')
                 arquivo_logs.write('-------[+] REGISTO DE MENSAGENS CAPTADAS PELO BOT NOS GRUPOS E PRIVADO [+]-------\n\n')
                 for mensagem in mensagens_logs:
                     grupo = mensagem['grupo']
@@ -67,9 +67,9 @@ async def users(msg):
                         texto = ''
                     arquivo_logs.write(texto)
                 arquivo_logs.close()
-                await bot.sendDocument(msg['chat']['id'], open('bot_files/arquivos/logs.txt','rb'), reply_to_message_id=msg['message_id'])
+                await bot.sendDocument(msg['chat']['id'], open('arquivos/logs.txt','rb'), reply_to_message_id=msg['message_id'])
                 await bot.sendMessage(msg['chat']['id'], '`{} Esta aqui o log de conversas que tenho armazenado, espero que não tenha nada neste log que te incrimine!`'.format(msg['from']['first_name']),'markdown', reply_to_message_id=msg['message_id'])
-                os.remove('bot_files/arquivos/logs.txt')
+                os.remove('arquivos/logs.txt')
             else:
                 await bot.sendMessage(msg['chat']['id'], f"@{msg['from']['username']} `este comando é permitido so para admin's`",'markdown')
 
@@ -79,7 +79,7 @@ async def users(msg):
             if adm['user'] == True:
                 cursor_logs.execute("""SELECT * FROM mensagens; """)
                 mensagens_logs = cursor_logs.fetchall()
-                arquivo_logs = open('bot_files/arquivos/logs.txt', 'a',encoding='utf-8')
+                arquivo_logs = open('arquivos/logs.txt', 'a',encoding='utf-8')
                 arquivo_logs.write('-------[+] REGISTO DE MENSAGENS CAPTADAS PELO BOT NOS GRUPOS E PRIVADO [+]-------\n\n')
                 for mensagem in mensagens_logs:
                     grupo = mensagem['grupo']
@@ -97,9 +97,9 @@ async def users(msg):
                         texto = ''
                     arquivo_logs.write(texto)
                 arquivo_logs.close()
-                await bot.sendDocument(msg['chat']['id'], open('bot_files/arquivos/logs.txt', 'rb'),reply_to_message_id=msg['message_id'])
+                await bot.sendDocument(msg['chat']['id'], open('arquivos/logs.txt', 'rb'),reply_to_message_id=msg['message_id'])
                 await bot.sendMessage(msg['chat']['id'],'`{} Esta aqui o Backup de logs de conversas que tenho armazenado, caso preciso guarde este arquivo pois irei limpar a Database`'.format(msg['from']['first_name']), 'markdown', reply_to_message_id=msg['message_id'])
-                os.remove('bot_files/arquivos/logs.txt')
+                os.remove('arquivos/logs.txt')
                 cursor_logs.execute("""DELETE FROM mensagens""")
                 conexao_logs.commit()
                 await bot.sendMessage(msg['chat']['id'], f"🤖 {msg['from']['first_name']} Todas os logs de usuários e grupos foram apagados!")
@@ -986,7 +986,7 @@ Caso queira se aventurar em aprender tudo sobre seu desbloqueio ou exploit acons
                 try:
                     cursor_logs.execute("""SELECT * FROM mensagens ; """)
                     mensagens_logs = cursor_logs.fetchall()
-                    arquivo_logs = open('bot_files/arquivos/logs.txt', 'a', encoding='utf-8')
+                    arquivo_logs = open('arquivos/logs.txt', 'a', encoding='utf-8')
                     arquivo_logs.write('-------[+] REGISTO DE MENSAGENS CAPTADAS PELO BOT NOS GRUPOS E PRIVADO [+]-------\n\n')
                     for mensagem in mensagens_logs:
                         grupo = mensagem['grupo']
@@ -1005,8 +1005,8 @@ Caso queira se aventurar em aprender tudo sobre seu desbloqueio ou exploit acons
                             texto = ''
                         arquivo_logs.write(texto)
                     arquivo_logs.close()
-                    await bot.sendDocument(msg['message']['chat']['id'], open('bot_files/arquivos/logs.txt', 'rb'),reply_to_message_id=msg['message']['message_id'])
-                    os.remove('bot_files/arquivos/logs.txt')
+                    await bot.sendDocument(msg['message']['chat']['id'], open('arquivos/logs.txt', 'rb'),reply_to_message_id=msg['message']['message_id'])
+                    os.remove('arquivos/logs.txt')
                     await bot.editMessageText((msg['message']['chat']['id'], msg['message']['message_id']),'`Esta aqui o log de conversas que tenho armazenado:` ','markdown', reply_markup=keyboard.voltar_configuracoes)
                 except Exception as e:
                     pass
@@ -1019,7 +1019,7 @@ Caso queira se aventurar em aprender tudo sobre seu desbloqueio ou exploit acons
                 try:
                     cursor_logs.execute("""SELECT * FROM mensagens; """)
                     mensagens_logs = cursor_logs.fetchall()
-                    arquivo_logs = open('bot_files/arquivos/logs.txt', 'a',encoding='utf-8')
+                    arquivo_logs = open('arquivos/logs.txt', 'a',encoding='utf-8')
                     arquivo_logs.write('-------[+] REGISTO DE MENSAGENS CAPTADAS PELO BOT NOS GRUPOS E PRIVADO [+]-------\n\n')
                     for mensagem in mensagens_logs:
                         grupo = mensagem['grupo']
@@ -1038,8 +1038,8 @@ Caso queira se aventurar em aprender tudo sobre seu desbloqueio ou exploit acons
                             texto = ''
                         arquivo_logs.write(texto)
                     arquivo_logs.close()
-                    await bot.sendDocument(msg['message']['chat']['id'], open('bot_files/arquivos/logs.txt', 'rb'),reply_to_message_id=msg['message']['message_id'])
-                    os.remove('bot_files/arquivos/logs.txt')
+                    await bot.sendDocument(msg['message']['chat']['id'], open('arquivos/logs.txt', 'rb'),reply_to_message_id=msg['message']['message_id'])
+                    os.remove('arquivos/logs.txt')
                     await bot.editMessageText((msg['message']['chat']['id'], msg['message']['message_id']),'`Esta aqui o Backup de logs de conversas que tenho armazenado, caso preciso guarde este arquivo pois irei limpar a Database.` ','markdown', reply_markup=keyboard.voltar_configuracoes)
                     cursor_logs.execute("""DELETE FROM mensagens""")
                     conexao_logs.commit()

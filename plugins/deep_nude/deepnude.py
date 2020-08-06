@@ -12,7 +12,7 @@ import cv2
 import os
 import sys
 import subprocess
-from bot_files.plugins.deep_nude.run import process
+from plugins.deep_nude.run import process
 
 
 def main(inputpath,outputpath):
@@ -36,6 +36,6 @@ def deep_nude_process(item):
     return watermark
 
 if __name__ == '__main__':
-	inputpath = 'bot_files/arquivos/file.jpg'
-	outputpath = 'bot_files/arquivos/renderizada.jpg'
+	inputpath = 'arquivos/file.jpg'
+	outputpath = 'arquivos/renderizada.jpg'
 	main(inputpath,outputpath)

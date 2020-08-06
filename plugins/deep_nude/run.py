@@ -10,12 +10,12 @@
 
 import cv2
 #Import Neural Network Model
-from bot_files.plugins.deep_nude.gan import DataLoader, DeepModel, tensor2im
+from plugins.deep_nude.gan import DataLoader, DeepModel, tensor2im
 #OpenCv Transform:
-from bot_files.plugins.deep_nude.opencv_transform.mask_to_maskref import create_maskref
-from bot_files.plugins.deep_nude.opencv_transform.maskdet_to_maskfin import create_maskfin
-from bot_files.plugins.deep_nude.opencv_transform.dress_to_correct import create_correct
-from bot_files.plugins.deep_nude.opencv_transform.nude_to_watermark import create_watermark
+from plugins.deep_nude.opencv_transform.mask_to_maskref import create_maskref
+from plugins.deep_nude.opencv_transform.maskdet_to_maskfin import create_maskfin
+from plugins.deep_nude.opencv_transform.dress_to_correct import create_correct
+from plugins.deep_nude.opencv_transform.nude_to_watermark import create_watermark
 
 """
 run.py
@@ -72,13 +72,13 @@ class Options():
 	def updateOptions(self, phase):
 
 		if phase == "correct_to_mask":
-			self.checkpoints_dir = "bot_files/plugins/deep_nude/checkpoints/cm.lib"
+			self.checkpoints_dir = "plugins/deep_nude/checkpoints/cm.lib"
 
 		elif phase == "maskref_to_maskdet":
-			self.checkpoints_dir = "bot_files/plugins/deep_nude/checkpoints/mm.lib"
+			self.checkpoints_dir = "plugins/deep_nude/checkpoints/mm.lib"
 
 		elif phase == "maskfin_to_nude":
-			self.checkpoints_dir = "bot_files/plugins/deep_nude/checkpoints/mn.lib"
+			self.checkpoints_dir = "plugins/deep_nude/checkpoints/mn.lib"
 
 # process(cv_img, mode)
 # return:

@@ -11,7 +11,7 @@
 #     [+]        Github Gorpo Dev: https://github.com/gorpo     [+]
 
 from amanobot.namedtuple import InlineKeyboardMarkup
-from bot_files.config import bot,bot_username
+from config import bot,bot_username
 
 voltar_store_free = InlineKeyboardMarkup(inline_keyboard=[[dict(text='« Voltar', callback_data='store_free')]])
 store_free = InlineKeyboardMarkup(inline_keyboard=[

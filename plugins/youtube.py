@@ -17,11 +17,11 @@ import amanobot
 import aiohttp
 from amanobot.exception import TelegramError
 import time
-from bot_files.config import bot, sudoers, logs, bot_username
+from config import bot, sudoers, logs, bot_username
 import os
 import youtube_dl
 from bs4 import BeautifulSoup
-from bot_files.utils import pretty_size
+from utils import pretty_size
 from youtubesearchpython import SearchVideos
 #pip install youtube-search-python
 

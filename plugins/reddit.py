@@ -13,7 +13,7 @@
 
 import re
 import aiohttp
-from bot_files.config import bot
+from config import bot
 import urllib
 
 

@@ -13,8 +13,8 @@
 
 
 from amanobot.namedtuple import InlineKeyboardMarkup
-from bot_files.config import bot, version, bot_username, git_repo
-from bot_files import keyboard
+from config import bot, version, bot_username, git_repo
+import keyboard
 
 
 async def start(msg):

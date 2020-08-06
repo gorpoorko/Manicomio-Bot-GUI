@@ -13,15 +13,15 @@
 
 from amanobot.exception import TelegramError
 import sqlite3
-from bot_files.config import bot
-from bot_files.plugins.admins import is_admin
+from config import bot
+from plugins.admins import is_admin
 
 
 
 async def ia_mensagens_proibidas(msg):
     try:
         adm = await is_admin(msg['chat']['id'], msg['from']['id'], msg['from']['id'])
-        conexao_sqlite = sqlite3.connect('bot_files/bot_database.db')
+        conexao_sqlite = sqlite3.connect('bot_database.db')
         conexao_sqlite.row_factory = sqlite3.Row
         cursor_sqlite = conexao_sqlite.cursor()
         chat_id = msg['chat']['id']

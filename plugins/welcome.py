@@ -12,15 +12,15 @@
 
 
 from amanobot.exception import TelegramError
-from bot_files.config import bot, sudoers, logs, bot_username, bot_id
+from config import bot, sudoers, logs, bot_username, bot_id
 from amanobot.namedtuple import InlineKeyboardMarkup
-from bot_files.utils import escape_markdown
-from bot_files.db_handler import conn, cursor
+from utils import escape_markdown
+from db_handler import conn, cursor
 import sqlite3
-from bot_files.plugins.admins import is_admin
+from plugins.admins import is_admin
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
-from bot_files import keyboard
+import keyboard
 
 def get_welcome(chat_id):
     cursor.execute('SELECT welcome, welcome_enabled FROM chats WHERE chat_id = (?)', (chat_id,))
@@ -106,7 +106,7 @@ Se esse erro persistir entre em contato com @GorpoOrko.'''.format(e.description)
             except:
                 doador = f"@{msg['new_chat_member']['id']} ({msg['new_chat_member']['first_name']})"
             try:
-                conexao_sqlite = sqlite3.connect('bot_files/bot_database.db')
+                conexao_sqlite = sqlite3.connect('bot_database.db')
                 conexao_sqlite.row_factory = sqlite3.Row
                 cursor_sqlite = conexao_sqlite.cursor()
                 cursor_sqlite.execute("""SELECT * FROM banimento; """)
@@ -115,7 +115,7 @@ Se esse erro persistir entre em contato com @GorpoOrko.'''.format(e.description)
                 for info in resultados:
                     if chat_id == int(info['id_grupo']) and int(info['valor']) == 1:
                         #cadastra os usuarios de forma automatica daqui para baixo:
-                        conexao_sqlite = sqlite3.connect('bot_files/bot_database.db')
+                        conexao_sqlite = sqlite3.connect('bot_database.db')
                         conexao_sqlite.row_factory = sqlite3.Row
                         cursor_sqlite = conexao_sqlite.cursor()
                         chat_id = msg['chat']['id']

@@ -16,10 +16,10 @@ from amanobot.exception import TelegramError, TooManyRequestsError, NotEnoughRig
 from amanobot.aio.loop import MessageLoop
 from colorama import Fore
 from urllib3.exceptions import ReadTimeoutError
-import  bot_files.backups
-import bot_files.db_handler as db
-from bot_files.config import bot, na_bot, enabled_plugins, logs, version, backups_chat
-from bot_files.utils import send_to_dogbin
+import backups
+import db_handler as db
+from config import bot, na_bot, enabled_plugins, logs, version, backups_chat
+from utils import send_to_dogbin
 import os
 
 
@@ -71,7 +71,7 @@ if __name__ == '__main__':
     print('\nBot Manicomio Artificial Inteligence With Database iniciado com sucesso, enviando dados para o Telegram! Versão: {}\n'.format(version))
 
     if backups_chat:
-        bot_files.backups.backup_service()
+        backups.backup_service()
 
     loop.create_task(MessageLoop(bot, handle).run_forever())
 

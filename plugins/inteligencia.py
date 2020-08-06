@@ -17,11 +17,11 @@ import speech_recognition as sr
 from pydub import AudioSegment
 import os
 import sqlite3
-from bot_files.config import bot,bot_username,logs
+from config import bot,bot_username,logs
 from datetime import datetime
-from bot_files.plugins.admins import is_admin
-from bot_files.plugins.inteligencias.ia_global import ia_global
-from bot_files.plugins.inteligencias.ia_local import ia_local
+from plugins.admins import is_admin
+from plugins.inteligencias.ia_global import ia_global
+from plugins.inteligencias.ia_local import ia_local
 
 
 
@@ -44,11 +44,11 @@ async def inteligencia(msg):
                 usuario = f"@{msg['from']['id']}({msg['from']['first_name']})"
                 pass
         # database geral---->
-        conexao_sqlite = sqlite3.connect('bot_files/bot_database.db')
+        conexao_sqlite = sqlite3.connect('bot_database.db')
         conexao_sqlite.row_factory = sqlite3.Row
         cursor_sqlite = conexao_sqlite.cursor()
         # database logs ---->
-        conexao_logs = sqlite3.connect('bot_files/bot_database_logs.db')
+        conexao_logs = sqlite3.connect('bot_database_logs.db')
         conexao_logs.row_factory = sqlite3.Row
         cursor_logs = conexao_logs.cursor()
         data = datetime.now().strftime('%d/%m/%Y %H:%M')
@@ -260,16 +260,16 @@ async def inteligencia(msg):
                 if msg.get('voice'):#MELHOR NAO APLICAR AQUI A REGRA SE JA EXISTE SENAO NAO VAI CADASTRAR
                     id_voz = msg['voice']['file_id']
                     #id_mensagem = msg['voice']['file_unique_id']
-                    await bot.download_file(msg['voice']['file_id'], 'bot_files/arquivos/audio_usuario_db.ogg')
-                    sound = AudioSegment.from_file("bot_files/arquivos/audio_usuario_db.ogg")
-                    sound.export("bot_files/arquivos/audio_usuario_db.wav", format="wav", bitrate="128k")
+                    await bot.download_file(msg['voice']['file_id'], 'arquivos/audio_usuario_db.ogg')
+                    sound = AudioSegment.from_file("arquivos/audio_usuario_db.ogg")
+                    sound.export("arquivos/audio_usuario_db.wav", format="wav", bitrate="128k")
                     r = sr.Recognizer()
-                    with sr.WavFile('bot_files/arquivos/audio_usuario_db.wav') as source:
+                    with sr.WavFile('arquivos/audio_usuario_db.wav') as source:
                         audio = r.record(source)
                     texto = r.recognize_google(audio, language='pt-BR')
                     await bot.sendMessage(chat_id, f"`{msg['from']['first_name']} disse:`\n```----  {texto}```", 'markdown', reply_to_message_id=msg['message_id'])
-                    os.remove("bot_files/arquivos/audio_usuario_db.ogg")
-                    os.remove("bot_files/arquivos/audio_usuario_db.wav")
+                    os.remove("arquivos/audio_usuario_db.ogg")
+                    os.remove("arquivos/audio_usuario_db.wav")
                     # banco de dados geral mensagens------->>
                     cursor_sqlite.execute("""SELECT * FROM mensagens; """)
                     mensagens = cursor_sqlite.fetchall()

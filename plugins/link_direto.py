@@ -11,7 +11,7 @@
 #     [+]        Github Gorpo Dev: https://github.com/gorpo     [+]
 
 
-from bot_files.config import bot,token,keys
+from config import bot,token,keys
 from bitlyshortener import Shortener
 
 

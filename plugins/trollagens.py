@@ -17,8 +17,8 @@ import amanobot
 import aiohttp
 from amanobot.exception import TelegramError
 import time
-from bot_files.config import bot, sudoers, logs, bot_username
-from bot_files.utils import send_to_dogbin, send_to_hastebin
+from config import bot, sudoers, logs, bot_username
+from utils import send_to_dogbin, send_to_hastebin
 
 async def trollagens(msg):
     if msg.get('text'):

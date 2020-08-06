@@ -14,8 +14,8 @@ import json
 import time
 from amanobot.exception import TelegramError, NotEnoughRightsError
 from amanobot.namedtuple import InlineKeyboardMarkup
-from bot_files.config import bot, bot_id, sudoers
-from bot_files.db_handler import conn, cursor
+from config import bot, bot_id, sudoers
+from db_handler import conn, cursor
 
 
 async def is_admin(chat_id, user_id, reply_id=None):

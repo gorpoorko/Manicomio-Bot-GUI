@@ -12,11 +12,11 @@
 
 import random
 import sqlite3
-from bot_files.config import bot
+from config import bot
 
 async def ia_local(msg):
     try:
-        conexao_sqlite = sqlite3.connect('bot_files/bot_database.db')
+        conexao_sqlite = sqlite3.connect('bot_database.db')
         conexao_sqlite.row_factory = sqlite3.Row
         cursor_sqlite = conexao_sqlite.cursor()
         chat_id = msg['chat']['id']

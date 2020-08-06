@@ -12,8 +12,8 @@
 
 import time
 
-from bot_files.config import max_time
-from bot_files.db_handler import *
+from config import max_time
+from db_handler import *
 
 async def processmsg(msg):
     if msg.get('date'):

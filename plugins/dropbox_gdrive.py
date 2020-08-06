@@ -15,9 +15,9 @@
 import os
 import dropbox
 import re
-from bot_files.config import bot,keys,sudoers
+from config import bot,keys,sudoers
 from datetime import datetime
-from bot_files.config import bot,sudoers
+from config import bot,sudoers
 from pydrive.auth import GoogleAuth
 from pydrive.drive import GoogleDrive
 import os
@@ -38,17 +38,17 @@ async def dropbox_gdrive(msg):
                     if tamanho > 10000000:
                         await bot.sendMessage(chat_id, '🤖 `Tamanho maximo para envio de 10mb`', 'markdown',reply_to_message_id=msg['message_id'])
                     if tamanho < 10000000:
-                        await bot.download_file(id_arquivo, f'bot_files/arquivos/{nome_arquivo}')
+                        await bot.download_file(id_arquivo, f'arquivos/{nome_arquivo}')
                         await bot.sendMessage(chat_id,f"🤖 `{msg['from']['first_name']} acabei de baixar seu arquivo, vou upar ele para o Dropbox`",'markdown', reply_to_message_id=msg['message_id'])
                         targetfile = f"/Manicomio_bot/{nome_arquivo}"
                         d = dropbox.Dropbox(token_dropbox)
-                        with open(f'bot_files/arquivos/{nome_arquivo}', "rb") as f:
+                        with open(f'arquivos/{nome_arquivo}', "rb") as f:
                             meta = d.files_upload(f.read(), targetfile, mode=dropbox.files.WriteMode("overwrite"))
                         link = d.sharing_create_shared_link(targetfile)
                         url = link.url
                         dl_url = re.sub(r"\?dl\=0", "?dl=1", url)
                         await bot.sendMessage(chat_id,f"🤖 {msg['from']['first_name']} acabei upar seu arquivo no Dropbox:{dl_url}", reply_to_message_id=msg['message_id'])
-                        os.remove(f'bot_files/arquivos/{nome_arquivo}')
+                        os.remove(f'arquivos/{nome_arquivo}')
             except:
                 pass
 
@@ -62,17 +62,17 @@ async def dropbox_gdrive(msg):
                         await bot.sendMessage(chat_id, '🤖 `Tamanho maximo para envio de 10mb`', 'markdown',
                                         reply_to_message_id=msg['message_id'])
                     if tamanho < 10000000:
-                        await bot.download_file(id_arquivo, f'bot_files/arquivos/{nome_arquivo}')
+                        await bot.download_file(id_arquivo, f'arquivos/{nome_arquivo}')
                         await bot.sendMessage(chat_id,f"🤖 `{msg['from']['first_name']} acabei de baixar seu arquivo, vou upar ele para o Dropbox`",'markdown', reply_to_message_id=msg['message_id'])
                         targetfile = f"/Manicomio_bot/{nome_arquivo}"
                         d = dropbox.Dropbox(token_dropbox)
-                        with open(f'bot_files/arquivos/{nome_arquivo}', "rb") as f:
+                        with open(f'arquivos/{nome_arquivo}', "rb") as f:
                             meta = d.files_upload(f.read(), targetfile, mode=dropbox.files.WriteMode("overwrite"))
                         link = d.sharing_create_shared_link(targetfile)
                         url = link.url
                         dl_url = re.sub(r"\?dl\=0", "?dl=1", url)
                         await bot.sendMessage(chat_id,f"🤖 {msg['from']['first_name']} acabei upar seu arquivo no Dropbox:{dl_url}", reply_to_message_id=msg['message_id'])
-                        os.remove(f'bot_files/arquivos/{nome_arquivo}')
+                        os.remove(f'arquivos/{nome_arquivo}')
             except:
                 pass
 
@@ -81,17 +81,17 @@ async def dropbox_gdrive(msg):
                     id_arquivo = msg.get('reply_to_message')['photo'][0]['file_id']
                     data = datetime.now().strftime('%d_%m_%Y-%H_%M')
                     nome_arquivo = f'imagem_{data}.jpg'
-                    await bot.download_file(id_arquivo, f"bot_files/arquivos/{nome_arquivo}")
+                    await bot.download_file(id_arquivo, f"arquivos/{nome_arquivo}")
                     await bot.sendMessage(chat_id,f"🤖 `{msg['from']['first_name']} acabei de baixar seu arquivo, vou upar ele para o Dropbox`",'markdown', reply_to_message_id=msg['message_id'])
                     targetfile = f"/Manicomio_bot/{nome_arquivo}"
                     d = dropbox.Dropbox(token_dropbox)
-                    with open(f'bot_files/arquivos/{nome_arquivo}', "rb") as f:
+                    with open(f'arquivos/{nome_arquivo}', "rb") as f:
                         meta = d.files_upload(f.read(), targetfile, mode=dropbox.files.WriteMode("overwrite"))
                     link = d.sharing_create_shared_link(targetfile)
                     url = link.url
                     dl_url = re.sub(r"\?dl\=0", "?dl=1", url)
                     await bot.sendMessage(chat_id,f"🤖 {msg['from']['first_name']} acabei upar seu arquivo no Dropbox:{dl_url}",reply_to_message_id=msg['message_id'])
-                    os.remove(f'bot_files/arquivos/{nome_arquivo}')
+                    os.remove(f'arquivos/{nome_arquivo}')
             except Exception as e:
                 pass
 
@@ -104,13 +104,13 @@ async def dropbox_gdrive(msg):
                     if tamanho > 10000000:
                         await bot.sendMessage(chat_id, '🤖 `Tamanho maximo para envio de 10mb`', 'markdown',reply_to_message_id=msg['message_id'])
                     if tamanho < 10000000:
-                       await bot.download_file(id_arquivo, f'bot_files/arquivos/{nome_arquivo}')
+                       await bot.download_file(id_arquivo, f'arquivos/{nome_arquivo}')
                        await bot.sendMessage(chat_id,f"🤖 `{msg['from']['first_name']} acabei de baixar seu arquivo, vou upar ele para o Gdrive`",'markdown', reply_to_message_id=msg['message_id'])
                     # Inicia o sistema de login precisando ser so uma vez ativado assim ele
                     # salva os dados de acesso e um documento para usar sem precisar logar novamente
-                    gauth = GoogleAuth("bot_files/arquivos/settings_gdrive.yaml")
+                    gauth = GoogleAuth("arquivos/settings_gdrive.yaml")
                     # Try to load saved client credentials
-                    gauth.LoadCredentialsFile("bot_files/arquivos/settings_gdrive.yaml")
+                    gauth.LoadCredentialsFile("arquivos/settings_gdrive.yaml")
                     if gauth.credentials is None:
                         # Authenticate if they're not there
                         # This is what solved the issues:
@@ -127,7 +127,7 @@ async def dropbox_gdrive(msg):
                     # Save the current credentials to a file
                     #gauth.SaveCredentialsFile("mycreds.txt")
                     drive = GoogleDrive(gauth)
-                    with open(f'bot_files/arquivos/{nome_arquivo}', "r", encoding="utf8") as f:
+                    with open(f'arquivos/{nome_arquivo}', "r", encoding="utf8") as f:
                         file_drive = drive.CreateFile({'title': nome_arquivo,
                                                        'parents': [{
                                                            'kind': 'drive#fileLink',
@@ -138,7 +138,7 @@ async def dropbox_gdrive(msg):
                         file_drive.Upload(param={'supportsTeamDrives': True})
                         print("🤖 Arquivo: " + nome_arquivo + " upload Gdrive concluido.")
                     await bot.sendMessage(chat_id,f"🤖 {msg['from']['first_name']} acabei upar seu arquivo no Gdrive", reply_to_message_id=msg['message_id'])
-                    os.remove(f'bot_files/arquivos/{nome_arquivo}')
+                    os.remove(f'arquivos/{nome_arquivo}')
             except:
                 pass
 
@@ -148,10 +148,10 @@ async def dropbox_gdrive(msg):
                     id_arquivo = msg.get('reply_to_message')['video']['file_id']
                     data = datetime.now().strftime('%d%m%Y%H%M')
                     nome_arquivo = f'video_{data}.mp4'
-                    await bot.download_file(id_arquivo, f'bot_files/arquivos/{nome_arquivo}')
+                    await bot.download_file(id_arquivo, f'arquivos/{nome_arquivo}')
                     await bot.sendMessage(chat_id,f"🤖 `{msg['from']['first_name']} acabei de baixar seu arquivo, vou upar ele para o Gdrive`",'markdown', reply_to_message_id=msg['message_id'])
-                    gauth = GoogleAuth("bot_files/arquivos/settings_gdrive.yaml")
-                    gauth.LoadCredentialsFile("bot_files/arquivos/settings_gdrive.yaml")
+                    gauth = GoogleAuth("arquivos/settings_gdrive.yaml")
+                    gauth.LoadCredentialsFile("arquivos/settings_gdrive.yaml")
                     if gauth.credentials is None:
                         # Authenticate if they're not there
                         # This is what solved the issues:
@@ -168,7 +168,7 @@ async def dropbox_gdrive(msg):
                     # Save the current credentials to a file
                     #gauth.SaveCredentialsFile("mycreds.txt")
                     drive = GoogleDrive(gauth)
-                    with open(f'bot_files/arquivos/{nome_arquivo}', "r", encoding="utf8", errors='ignore') as f:
+                    with open(f'arquivos/{nome_arquivo}', "r", encoding="utf8", errors='ignore') as f:
 
                         file_drive = drive.CreateFile({'title': nome_arquivo,'mimeType':'video/mp4',
                                                        'parents': [{
@@ -180,7 +180,7 @@ async def dropbox_gdrive(msg):
                         file_drive.Upload(param={'supportsTeamDrives': True})
                         print("🤖 Arquivo: " + nome_arquivo + " upload Gdrive concluido.")
                     await bot.sendMessage(chat_id,f"🤖 {msg['from']['first_name']} acabei upar seu arquivo no Gdrive", reply_to_message_id=msg['message_id'])
-                    os.remove(f'bot_files/arquivos/{nome_arquivo}')
+                    os.remove(f'arquivos/{nome_arquivo}')
             except Exception as e:
                 pass
 
@@ -189,13 +189,13 @@ async def dropbox_gdrive(msg):
                     id_arquivo = msg.get('reply_to_message')['photo'][0]['file_id']
                     data = datetime.now().strftime('%d%m%Y%H%M')
                     nome_arquivo = f'imagem_{data}.jpeg'
-                    await bot.download_file(id_arquivo, f"bot_files/arquivos/{nome_arquivo}")
+                    await bot.download_file(id_arquivo, f"arquivos/{nome_arquivo}")
                     await bot.sendMessage(chat_id, f"🤖 `{msg['from']['first_name']} acabei de baixar seu arquivo, vou upar ele para o Gdrive`", 'markdown', reply_to_message_id=msg['message_id'])
                     # Inicia o sistema de login precisando ser so uma vez ativado assim ele
                     # salva os dados de acesso e um documento para usar sem precisar logar novamente
-                    gauth = GoogleAuth("bot_files/arquivos/settings_gdrive.yaml")
+                    gauth = GoogleAuth("arquivos/settings_gdrive.yaml")
                     # Try to load saved client credentials
-                    gauth.LoadCredentialsFile("bot_files/arquivos/settings_gdrive.yaml")
+                    gauth.LoadCredentialsFile("arquivos/settings_gdrive.yaml")
                     if gauth.credentials is None:
                         # Authenticate if they're not there
                         # This is what solved the issues:
@@ -212,7 +212,7 @@ async def dropbox_gdrive(msg):
                     # Save the current credentials to a file
                     # gauth.SaveCredentialsFile("mycreds.txt")
                     drive = GoogleDrive(gauth)
-                    with open(f'bot_files/arquivos/{nome_arquivo}', "r", encoding="utf8", errors='ignore') as f:
+                    with open(f'arquivos/{nome_arquivo}', "r", encoding="utf8", errors='ignore') as f:
                         file_drive = drive.CreateFile({'title': nome_arquivo,'mimeType':'image/jpeg',
                                                        'parents': [{
                                                            'kind': 'drive#fileLink',
@@ -223,7 +223,7 @@ async def dropbox_gdrive(msg):
                         file_drive.Upload(param={'supportsTeamDrives': True})
                         print("🤖 Arquivo: " + nome_arquivo + " upload Gdrive concluido.")
                     await bot.sendMessage(chat_id, f"🤖 {msg['from']['first_name']} acabei upar seu arquivo no Gdrive", reply_to_message_id=msg['message_id'])
-                    os.remove(f'bot_files/arquivos/{nome_arquivo}')
+                    os.remove(f'arquivos/{nome_arquivo}')
             except Exception as e:
                 pass
 

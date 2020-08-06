@@ -13,7 +13,7 @@
 import os
 from amanobot.namedtuple import InlineKeyboardMarkup
 from amanobot.exception import TelegramError
-from bot_files.config import bot, bot_username
+from config import bot, bot_username
 
 async def criar_sticker(msg):
     if msg.get('text'):

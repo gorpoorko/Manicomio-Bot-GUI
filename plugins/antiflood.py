@@ -12,9 +12,9 @@
 
 import time
 
-from bot_files.db_handler import conn, cursor
-from bot_files.plugins.admins import is_admin
-from bot_files.config import bot
+from db_handler import conn, cursor
+from plugins.admins import is_admin
+from config import bot
 
 cursor.execute('CREATE TABLE IF NOT EXISTS antiflood (chat_id, user_id, unix_time)')
 

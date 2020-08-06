@@ -13,8 +13,8 @@
 
 import json
 import aiml
-from bot_files.config import bot
-from bot_files.db_handler import conn, cursor
+from config import bot
+from db_handler import conn, cursor
 
 k = aiml.Kernel()
 k.learn("")

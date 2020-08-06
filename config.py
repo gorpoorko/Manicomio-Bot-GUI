@@ -37,7 +37,7 @@ keys = dict(
 """
 
 # database dos tokens, inserir tokens na database usando painel ou via CLI
-conexao_sqlite = sqlite3.connect('bot_files/bot_database.db')
+conexao_sqlite = sqlite3.connect('bot_database.db')
 conexao_sqlite.row_factory = sqlite3.Row
 cursor_sqlite = conexao_sqlite.cursor()
 cursor_sqlite.execute("""SELECT * FROM tokens_bot""")
@@ -106,7 +106,6 @@ enabled_plugins = [
     'ia_cadastro_manual',
     'ia_cadastro_perguntas',
     'ia_crawler_sites',
-    'ia_deepnude',
-
 
 ]
+#'ia_deepnude',

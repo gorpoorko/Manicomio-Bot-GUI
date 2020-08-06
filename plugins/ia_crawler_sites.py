@@ -13,7 +13,7 @@
 import requests
 from urllib.request import urlparse, urljoin
 from bs4 import BeautifulSoup
-from bot_files.config import bot
+from config import bot
 import os
 
 
@@ -73,13 +73,13 @@ def crawler(url, max_urls=50):
         #pega o nome de dominio do site
         nome_dominio = urlparse(url).netloc
         # salva os links internos em um arquivo
-        with open(f"bot_files/arquivos/links_internos.txt", "w") as f:
+        with open(f"arquivos/links_internos.txt", "w") as f:
             for internal_link in urls_internas:
                    f.write(internal_link)
                    #print(internal_link.strip(), file=f)
             f.close()
         # salva os links externos em um arquivo
-        with open(f"bot_files/arquivos/links_externos.txt", "w") as f:
+        with open(f"arquivos/links_externos.txt", "w") as f:
             for external_link in urls_externas:
                 f.write(external_link)
                 #print(external_link.strip(), file=f)
@@ -105,10 +105,10 @@ async def ia_crawler_sites(msg):
                 b = await bot.sendMessage(chat_id,f'🤖 `Crawler no site {nome_dominio} iniciado aguarde...`','markdown', reply_to_message_id=msg['message_id'])
                 a = crawler(url,max_urls)
                 await bot.editMessageText((msg['chat']['id'], b['message_id']), f'🤖 `Crawler do site {nome_dominio} concluído, aqui estão os arquivos com os links:`','markdown')
-                await bot.sendDocument(chat_id,document=open('bot_files/arquivos/links_internos.txt','rb'))#,caption=f'Links internos que consegui captar no site {nome_dominio}',reply_to_message_id=msg['message_id'])
-                await bot.sendDocument(chat_id, document=open('bot_files/arquivos/links_externos.txt', 'rb'))#,caption=f'Links externos que consegui captar no site {nome_dominio}',reply_to_message_id=msg['message_id'])
-                os.remove('bot_files/arquivos/links_internos.txt')
-                os.remove('bot_files/arquivos/links_externos.txt')
+                await bot.sendDocument(chat_id,document=open('arquivos/links_internos.txt','rb'))#,caption=f'Links internos que consegui captar no site {nome_dominio}',reply_to_message_id=msg['message_id'])
+                await bot.sendDocument(chat_id, document=open('arquivos/links_externos.txt', 'rb'))#,caption=f'Links externos que consegui captar no site {nome_dominio}',reply_to_message_id=msg['message_id'])
+                os.remove('arquivos/links_internos.txt')
+                os.remove('arquivos/links_externos.txt')
     except Exception as e:
         pass
 
