@@ -30,7 +30,7 @@ async def users(msg):
     conexao_sqlite.row_factory = sqlite3.Row
     cursor_sqlite = conexao_sqlite.cursor()
     # database logs ---->
-    conexao_logs = sqlite3.connect('bot_database_logs.db')
+    conexao_logs = sqlite3.connect('bot_files/bot_database_logs.db')
     conexao_logs.row_factory = sqlite3.Row
     cursor_logs = conexao_logs.cursor()
     try:
