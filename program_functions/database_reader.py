@@ -12,6 +12,14 @@ from main import *
 
 
 def funcoesBancodados(self):
+    self.ui.botao_carregar_database.clicked.connect(lambda: carregarDatabase(self))
+    self.ui.botao_fechar_database.clicked.connect(lambda: fecharDatabase(self))
+    self.ui.comboBox_seleciona_tabela.activated.connect(lambda: carregarDatabase(self))
+
+def fecharDatabase(self):
+    self.db.close()
+
+def carregarDatabase(self):
     self.db = QtSql.QSqlDatabase.addDatabase('QSQLITE')
     self.db.setDatabaseName('bot_files/bot_database.db')
     self.model = QtSql.QSqlTableModel()
@@ -24,33 +32,30 @@ def funcoesBancodados(self):
     self.model.select()
     self.ui.tabela_dados_db.setModel(self.model)
     self.i = self.model.rowCount()
-    self.ui.botao_deletar_linha.clicked.connect(lambda: deletarLinha(self) )
-    self.db.close()
+    self.ui.botao_deletar_linha.clicked.connect(lambda: deletarLinha(self))
+    #self.db.close()
 
 
 def carregaTabelas(self):
     a = self.ui.comboBox_seleciona_tabela.currentText()
-    self.db = QtSql.QSqlDatabase.addDatabase('QSQLITE')
-    self.db.setDatabaseName('bot_files/bot_database.db')
-    self.model = QtSql.QSqlTableModel()
     self.model.setTable(a)
     self.model.setEditStrategy(QtSql.QSqlTableModel.OnFieldChange)
     self.model.select()
     self.ui.tabela_dados_db.setModel(self.model)
-    self.i = self.model.rowCount()
-    self.db.close()
 
 
 
 def deletarLinha(self):
-    self.db = QtSql.QSqlDatabase.addDatabase('QSQLITE')
-    self.db.setDatabaseName('bot_files/bot_database.db')
-    self.model = QtSql.QSqlTableModel()
+
+    #self.db = QtSql.QSqlDatabase.addDatabase('QSQLITE')
+    #self.db.setDatabaseName('bot_files/bot_database.db')
+    #self.model = QtSql.QSqlTableModel()
+
     if self.ui.tabela_dados_db.currentIndex().row() > -1:
-        self.model.removeRow(self.ui.tabela_dados_db.currentIndex().row())
+        a = self.model.removeRow(self.ui.tabela_dados_db.currentIndex().row())
         self.i -= 1
         self.model.select()
-        self.db.close()
+        #self.db.close()
     else:
         QMessageBox.question(self, 'Mensagem', "Selecione uma linha para deletar", QMessageBox.Ok)
         self.show()

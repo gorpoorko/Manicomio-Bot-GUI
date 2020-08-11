@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>726</width>
-    <height>651</height>
+    <height>565</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,7 +18,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>:/favicon/program_functions/images//icon.ico</normaloff>:/favicon/program_functions/images//icon.ico</iconset>
+    <normaloff>program_functions/images/icon.ico</normaloff>program_functions/images/icon.ico</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">QMainWindow{background-color: darkgray;border: 1px solid black;}</string>
@@ -483,7 +483,7 @@ QPushButton:pressed {
              <property name="minimumSize">
               <size>
                <width>0</width>
-               <height>300</height>
+               <height>330</height>
               </size>
              </property>
              <property name="autoFillBackground">
@@ -809,7 +809,7 @@ border: 2px solid  rgb(120,0,0);
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLineEdit" name="inserir_id_pessoal_bot_2">
+                  <widget class="QLineEdit" name="inserir_token_bitly">
                    <property name="minimumSize">
                     <size>
                      <width>0</width>
@@ -845,7 +845,7 @@ border: 2px solid  rgb(120,0,0);
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLineEdit" name="inserir_canal_bot_2">
+                  <widget class="QLineEdit" name="inserir_id_google">
                    <property name="minimumSize">
                     <size>
                      <width>0</width>
@@ -870,7 +870,7 @@ border: 2px solid  rgb(120,0,0);
 }</string>
                    </property>
                    <property name="text">
-                    <string>NULL</string>
+                    <string>id google</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -1016,15 +1016,57 @@ border: 2px solid  rgb(120,0,0);
                   </widget>
                  </item>
                  <item>
-                  <widget class="QPushButton" name="botao_start_bot">
+                  <widget class="QLineEdit" name="inserir_key_google">
                    <property name="minimumSize">
                     <size>
                      <width>0</width>
-                     <height>43</height>
+                     <height>20</height>
                     </size>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">QPushButton {
+                    <string notr="true">QLineEdit{
+border: 2px solid rgb(45,45,45);
+border-radius: 5px;
+padding: 10px;
+background-color: rgb(30,30,30);
+	color: rgb(203, 203, 203);
+font: 13px Courier New;
+}
+QLineEdit:hover{
+border: 2px solid rgb(55,55,55);
+}
+QLineEdit:focus{
+border: 2px solid  rgb(120,0,0);
+	color: rgb(120,0,0);
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>key google</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="clearButtonEnabled">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="botao_start_bot">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
 	background-color:transparent;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -1039,16 +1081,10 @@ QPushButton:hover {
 QPushButton:pressed {
 	background-color: rgb(120,0,0);
 }</string>
-                   </property>
-                   <property name="text">
-                    <string>start artificial inteligence</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-             </layout>
+             </property>
+             <property name="text">
+              <string>start artificial inteligence</string>
+             </property>
             </widget>
            </item>
           </layout>
@@ -1064,7 +1100,7 @@ QPushButton:pressed {
               </size>
              </property>
              <property name="frameShape">
-              <enum>QFrame::StyledPanel</enum>
+              <enum>QFrame::NoFrame</enum>
              </property>
              <property name="frameShadow">
               <enum>QFrame::Raised</enum>
@@ -1240,6 +1276,66 @@ QPushButton:pressed {
                   <number>0</number>
                  </property>
                  <item>
+                  <widget class="QFrame" name="frame_4">
+                   <property name="frameShape">
+                    <enum>QFrame::NoFrame</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout_9">
+                    <item>
+                     <widget class="QPushButton" name="botao_carregar_db">
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton {
+	background-color:transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 2px solid rgb(45,45,45);
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+	font: 15px SegoeUIl, bold;
+}
+QPushButton:hover {
+	background-color: rgb(120,0,0);
+}
+QPushButton:pressed {
+	background-color: rgb(120,0,0);
+}</string>
+                      </property>
+                      <property name="text">
+                       <string>carregar database</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="botao_fechar_db">
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton {
+	background-color:transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 2px solid rgb(45,45,45);
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+	font: 15px SegoeUIl, bold;
+}
+QPushButton:hover {
+	background-color: rgb(120,0,0);
+}
+QPushButton:pressed {
+	background-color: rgb(120,0,0);
+}</string>
+                      </property>
+                      <property name="text">
+                       <string>fechar database</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
                   <widget class="QTextEdit" name="texto_enviar_mensagem">
                    <property name="maximumSize">
                     <size>
@@ -1321,6 +1417,60 @@ QPushButton:pressed {
               <enum>QFrame::Raised</enum>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_9">
+              <property name="spacing">
+               <number>6</number>
+              </property>
+              <property name="topMargin">
+               <number>2</number>
+              </property>
+              <item>
+               <widget class="QLineEdit" name="linha_mensagem">
+                <property name="styleSheet">
+                 <string notr="true">QLineEdit{
+border: 2px solid rgb(45,45,45);
+border-radius: 5px;
+padding: 10px;
+background-color: rgb(30,30,30);
+	color: rgb(203, 203, 203);
+font: 15px Courier New;
+}
+QLineEdit:hover{
+border: 2px solid rgb(55,55,55);
+}
+QLineEdit:focus{
+border: 2px solid  rgb(120,0,0);
+	color: rgb(120,0,0);
+}</string>
+                </property>
+                <property name="text">
+                 <string>Envie sua mensagem usando Enter</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="botao_receber_mensagens">
+                <property name="styleSheet">
+                 <string notr="true">QPushButton {
+	background-color:transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 2px solid rgb(45,45,45);
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+	font: 15px SegoeUIl, bold;
+}
+QPushButton:hover {
+	background-color: rgb(120,0,0);
+}
+QPushButton:pressed {
+	background-color: rgb(120,0,0);
+}</string>
+                </property>
+                <property name="text">
+                 <string>receber mensagens</string>
+                </property>
+               </widget>
+              </item>
               <item>
                <widget class="QTextEdit" name="mensagens_recebidas">
                 <property name="styleSheet">
@@ -1376,7 +1526,7 @@ p, li { white-space: pre-wrap; }
              <property name="maximumSize">
               <size>
                <width>16777215</width>
-               <height>50</height>
+               <height>40</height>
               </size>
              </property>
              <property name="frameShape">
@@ -1386,34 +1536,14 @@ p, li { white-space: pre-wrap; }
               <enum>QFrame::Raised</enum>
              </property>
              <layout class="QHBoxLayout" name="horizontalLayout_6">
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
               <item>
-               <widget class="QComboBox" name="comboBox_seleciona_tabela">
-                <property name="styleSheet">
-                 <string notr="true">QComboBox {
-background-color:transparent;
-	background-repeat: no-repeat;
-	background-position: center;
-	border: 2px solid rgb(45,45,45);
-border-radius: 5px;
-	color: rgb(255, 255, 255);
-	font: 15px SegoeUIl, bold;
-}
-QComboBox:hover {
-	background-color: rgb(120,0,0);
-}
-QComboBox:pressed {
-	background-color: rgb(120,0,0);
-}</string>
-                </property>
-                <item>
-                 <property name="text">
-                  <string>                      selecione a tabela</string>
-                 </property>
-                </item>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="botao_deletar_linha">
+               <widget class="QPushButton" name="botao_carregar_database">
                 <property name="styleSheet">
                  <string notr="true">QPushButton {
 	background-color:transparent;
@@ -1422,7 +1552,7 @@ QComboBox:pressed {
 	border: 2px solid rgb(45,45,45);
 border-radius: 5px;
 	color: rgb(255, 255, 255);
-	font: 20px SegoeUIl, bold;
+	font: 15px SegoeUIl, bold;
 }
 QPushButton:hover {
 	background-color: rgb(120,0,0);
@@ -1432,7 +1562,31 @@ QPushButton:pressed {
 }</string>
                 </property>
                 <property name="text">
-                 <string>deletar linha</string>
+                 <string>carregar database</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="botao_fechar_database">
+                <property name="styleSheet">
+                 <string notr="true">QPushButton {
+	background-color:transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 2px solid rgb(45,45,45);
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+	font: 15px SegoeUIl, bold;
+}
+QPushButton:hover {
+	background-color: rgb(120,0,0);
+}
+QPushButton:pressed {
+	background-color: rgb(120,0,0);
+}</string>
+                </property>
+                <property name="text">
+                 <string>fechar database</string>
                 </property>
                </widget>
               </item>
@@ -1447,17 +1601,91 @@ QPushButton:pressed {
              <property name="frameShadow">
               <enum>QFrame::Raised</enum>
              </property>
-             <widget class="QTableView" name="tabela_dados_db">
-              <property name="geometry">
-               <rect>
-                <x>20</x>
-                <y>0</y>
-                <width>741</width>
-                <height>482</height>
-               </rect>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QHeaderView {
+             <layout class="QVBoxLayout" name="verticalLayout_4">
+              <item>
+               <widget class="QFrame" name="frame_3">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>20</height>
+                 </size>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_8">
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QComboBox" name="comboBox_seleciona_tabela">
+                   <property name="styleSheet">
+                    <string notr="true">QComboBox {
+background-color:transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 2px solid rgb(45,45,45);
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+	font: 15px SegoeUIl, bold;
+}
+QComboBox:hover {
+	background-color: rgb(120,0,0);
+}
+QComboBox:pressed {
+	background-color: rgb(120,0,0);
+}</string>
+                   </property>
+                   <item>
+                    <property name="text">
+                     <string>                      selecione a tabela</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="botao_deletar_linha">
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton {
+	background-color:transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 2px solid rgb(45,45,45);
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+	font: 15px SegoeUIl, bold;
+}
+QPushButton:hover {
+	background-color: rgb(120,0,0);
+}
+QPushButton:pressed {
+	background-color: rgb(120,0,0);
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>deletar linha</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QTableView" name="tabela_dados_db">
+                <property name="styleSheet">
+                 <string notr="true">QHeaderView {
 background: rgb(30, 30, 30);
 }
 QHeaderView::section{
@@ -1492,17 +1720,19 @@ border: 2px solid  rgb(120,0,0);
 	color: rgb(120,0,0);
 }
 * { gridline-color: gray }</string>
-              </property>
-              <property name="frameShape">
-               <enum>QFrame::NoFrame</enum>
-              </property>
-              <property name="gridStyle">
-               <enum>Qt::SolidLine</enum>
-              </property>
-              <attribute name="horizontalHeaderDefaultSectionSize">
-               <number>150</number>
-              </attribute>
-             </widget>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="gridStyle">
+                 <enum>Qt::SolidLine</enum>
+                </property>
+                <attribute name="horizontalHeaderDefaultSectionSize">
+                 <number>150</number>
+                </attribute>
+               </widget>
+              </item>
+             </layout>
             </widget>
            </item>
           </layout>
@@ -1581,6 +1811,12 @@ border: 2px solid  rgb(120,0,0);
                 <layout class="QHBoxLayout" name="horizontalLayout_24">
                  <item>
                   <widget class="QLabel" name="imagem_deepnude_renderizada">
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
                    <property name="text">
                     <string/>
                    </property>
@@ -1650,7 +1886,7 @@ border: 2px solid  rgb(120,0,0);
 	border: 2px solid rgb(45,45,45);
 border-radius: 5px;
 	color: rgb(255, 255, 255);
-	font: 20px SegoeUIl, bold;
+	font: 15px SegoeUIl, bold;
 }
 QPushButton:hover {
 	background-color: rgb(120,0,0);
@@ -1680,7 +1916,7 @@ QPushButton:pressed {
 	border: 2px solid rgb(45,45,45);
 border-radius: 5px;
 	color: rgb(255, 255, 255);
-	font: 20px SegoeUIl, bold;
+	font: 15px SegoeUIl, bold;
 }
 QPushButton:hover {
 	background-color: rgb(120,0,0);
@@ -1701,6 +1937,309 @@ QPushButton:pressed {
          </widget>
          <widget class="QWidget" name="pagina_configuracoes">
           <layout class="QVBoxLayout" name="verticalLayout_27">
+           <item>
+            <widget class="QFrame" name="frame_extras_configuracoes">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>200</height>
+              </size>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::NoFrame</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_27">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>10</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QFrame" name="frame_frequencia_configuracoes">
+                <property name="frameShape">
+                 <enum>QFrame::Box</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_12">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QPushButton" name="botao_carregar_database_configuracoes">
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton {
+	background-color:transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 2px solid rgb(45,45,45);
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+	font: 15px SegoeUIl, bold;
+}
+QPushButton:hover {
+	background-color: rgb(120,0,0);
+}
+QPushButton:pressed {
+	background-color: rgb(120,0,0);
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>carregar database</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="comboBox_configuracoes">
+                   <property name="styleSheet">
+                    <string notr="true">QComboBox {
+background-color:transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 2px solid rgb(45,45,45);
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+	font: 15px SegoeUIl, bold;
+}
+QComboBox:hover {
+	background-color: rgb(120,0,0);
+}
+QComboBox:pressed {
+	background-color: rgb(120,0,0);
+}</string>
+                   </property>
+                   <item>
+                    <property name="text">
+                     <string>selecione a tabela</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="botao_fechar_database_configuracoes">
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton {
+	background-color:transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 2px solid rgb(45,45,45);
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+	font: 15px SegoeUIl, bold;
+}
+QPushButton:hover {
+	background-color: rgb(120,0,0);
+}
+QPushButton:pressed {
+	background-color: rgb(120,0,0);
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>fechar database</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QFrame" name="frame_banimento_automatico_2">
+                <property name="styleSheet">
+                 <string notr="true"/>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::Box</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_32">
+                 <item>
+                  <widget class="QLabel" name="label_banimento_automatico_2">
+                   <property name="styleSheet">
+                    <string notr="true">color: rgb(255, 255, 255);
+	font: 15px SegoeUIl, bold;</string>
+                   </property>
+                   <property name="text">
+                    <string>SAIR DE UM GRUPO</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="id_manual_configuracoes">
+                   <property name="styleSheet">
+                    <string notr="true">QLineEdit{
+border: 2px solid rgb(45,45,45);
+border-radius: 5px;
+padding: 10px;
+background-color: rgb(30,30,30);
+	color: rgb(203, 203, 203);
+font: 15px Courier New;
+}
+QLineEdit:hover{
+border: 2px solid rgb(55,55,55);
+}
+QLineEdit:focus{
+border: 2px solid  rgb(120,0,0);
+	color: rgb(120,0,0);
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>id do grupo</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="botao_sair_grupo">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton {
+	background-color:transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 2px solid rgb(45,45,45);
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+	font: 15px SegoeUIl, bold;
+}
+QPushButton:hover {
+	background-color: rgb(120,0,0);
+}
+QPushButton:pressed {
+	background-color: rgb(120,0,0);
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>clique para sair</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QFrame" name="frame_6">
+                <property name="frameShape">
+                 <enum>QFrame::Box</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_33">
+                 <item>
+                  <widget class="QLabel" name="label_local_inteligencia_2">
+                   <property name="styleSheet">
+                    <string notr="true">color: rgb(255, 255, 255);
+	font: 15px SegoeUIl, bold;</string>
+                   </property>
+                   <property name="text">
+                    <string>BANIR UM USUÁRIO</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="id_usuario_ban">
+                   <property name="styleSheet">
+                    <string notr="true">QLineEdit{
+border: 2px solid rgb(45,45,45);
+border-radius: 5px;
+padding: 10px;
+background-color: rgb(30,30,30);
+	color: rgb(203, 203, 203);
+font: 15px Courier New;
+}
+QLineEdit:hover{
+border: 2px solid rgb(55,55,55);
+}
+QLineEdit:focus{
+border: 2px solid  rgb(120,0,0);
+	color: rgb(120,0,0);
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>id do usuário</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="botao_banir_usuario">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton {
+	background-color:transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 2px solid rgb(45,45,45);
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+	font: 15px SegoeUIl, bold;
+}
+QPushButton:hover {
+	background-color: rgb(120,0,0);
+}
+QPushButton:pressed {
+	background-color: rgb(120,0,0);
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>clique para banir</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
            <item>
             <widget class="QFrame" name="frame_configuracoes">
              <property name="minimumSize">
@@ -1764,12 +2303,62 @@ QPushButton:pressed {
                   </widget>
                  </item>
                  <item>
-                  <widget class="QSlider" name="slider_banimento_automatico">
-                   <property name="styleSheet">
-                    <string notr="true">QSlider::handle:horizontal {background-color: rgb(120,0,0);}</string>
+                  <widget class="QPushButton" name="botao_ativa_banimento">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>20</height>
+                    </size>
                    </property>
-                   <property name="orientation">
-                    <enum>Qt::Horizontal</enum>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton {
+	background-color:transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 2px solid rgb(45,45,45);
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+	font: 15px SegoeUIl, bold;
+}
+QPushButton:hover {
+	background-color: rgb(120,0,0);
+}
+QPushButton:pressed {
+	background-color: rgb(120,0,0);
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>ativado</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="botao_desativa_banimento">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton {
+	background-color:transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 2px solid rgb(45,45,45);
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+	font: 15px SegoeUIl, bold;
+}
+QPushButton:hover {
+	background-color: rgb(120,0,0);
+}
+QPushButton:pressed {
+	background-color: rgb(120,0,0);
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>desativado</string>
                    </property>
                   </widget>
                  </item>
@@ -1819,12 +2408,56 @@ QPushButton:pressed {
                   </widget>
                  </item>
                  <item>
-                  <widget class="QSlider" name="slider_local_inteligencia">
+                  <widget class="QPushButton" name="botao_inteligencia_local">
                    <property name="styleSheet">
-                    <string notr="true">QSlider::handle:horizontal {background-color: rgb(120,0,0);}</string>
+                    <string notr="true">QPushButton {
+	background-color:transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 2px solid rgb(45,45,45);
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+	font: 15px SegoeUIl, bold;
+}
+QPushButton:hover {
+	background-color: rgb(120,0,0);
+}
+QPushButton:pressed {
+	background-color: rgb(120,0,0);
+}</string>
                    </property>
-                   <property name="orientation">
-                    <enum>Qt::Horizontal</enum>
+                   <property name="text">
+                    <string>local</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="botao_inteligencia_global">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton {
+	background-color:transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 2px solid rgb(45,45,45);
+border-radius: 5px;
+	color: rgb(255, 255, 255);
+	font: 15px SegoeUIl, bold;
+}
+QPushButton:hover {
+	background-color: rgb(120,0,0);
+}
+QPushButton:pressed {
+	background-color: rgb(120,0,0);
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>global</string>
                    </property>
                   </widget>
                  </item>
@@ -1878,8 +2511,20 @@ QPushButton:pressed {
                    <property name="styleSheet">
                     <string notr="true">QSlider::handle:horizontal {background-color: rgb(120,0,0);}</string>
                    </property>
+                   <property name="maximum">
+                    <number>10</number>
+                   </property>
+                   <property name="pageStep">
+                    <number>1</number>
+                   </property>
                    <property name="orientation">
                     <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="invertedAppearance">
+                    <bool>false</bool>
+                   </property>
+                   <property name="tickPosition">
+                    <enum>QSlider::TicksAbove</enum>
                    </property>
                   </widget>
                  </item>
@@ -1896,258 +2541,6 @@ QPushButton:pressed {
                    </property>
                    <property name="text">
                     <string>MUDO</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-             </layout>
-            </widget>
-           </item>
-           <item>
-            <widget class="QFrame" name="frame_extras_configuracoes">
-             <property name="maximumSize">
-              <size>
-               <width>16777215</width>
-               <height>200</height>
-              </size>
-             </property>
-             <property name="frameShape">
-              <enum>QFrame::NoFrame</enum>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
-             </property>
-             <layout class="QHBoxLayout" name="horizontalLayout_27">
-              <property name="spacing">
-               <number>0</number>
-              </property>
-              <property name="leftMargin">
-               <number>0</number>
-              </property>
-              <property name="topMargin">
-               <number>0</number>
-              </property>
-              <property name="rightMargin">
-               <number>0</number>
-              </property>
-              <property name="bottomMargin">
-               <number>0</number>
-              </property>
-              <item>
-               <widget class="QFrame" name="frame_banimento_automatico_2">
-                <property name="styleSheet">
-                 <string notr="true"/>
-                </property>
-                <property name="frameShape">
-                 <enum>QFrame::Box</enum>
-                </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Raised</enum>
-                </property>
-                <layout class="QVBoxLayout" name="verticalLayout_32">
-                 <item>
-                  <widget class="QLabel" name="label_banimento_automatico_2">
-                   <property name="styleSheet">
-                    <string notr="true">color: rgb(255, 255, 255);
-	font: 15px SegoeUIl, bold;</string>
-                   </property>
-                   <property name="text">
-                    <string>SAIR DE UM GRUPO</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLineEdit" name="lineEdit">
-                   <property name="styleSheet">
-                    <string notr="true">QLineEdit{
-border: 2px solid rgb(45,45,45);
-border-radius: 5px;
-padding: 10px;
-background-color: rgb(30,30,30);
-	color: rgb(203, 203, 203);
-font: 15px Courier New;
-}
-QLineEdit:hover{
-border: 2px solid rgb(55,55,55);
-}
-QLineEdit:focus{
-border: 2px solid  rgb(120,0,0);
-	color: rgb(120,0,0);
-}</string>
-                   </property>
-                   <property name="text">
-                    <string>id do grupo</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLabel" name="aviso_banimento_automatico_2">
-                   <property name="font">
-                    <font>
-                     <family>Segoe UI</family>
-                     <pointsize>14</pointsize>
-                    </font>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">color: rgb(120,0,0);</string>
-                   </property>
-                   <property name="text">
-                    <string>ATIVADO</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-              <item>
-               <widget class="QFrame" name="frame_6">
-                <property name="frameShape">
-                 <enum>QFrame::Box</enum>
-                </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Raised</enum>
-                </property>
-                <layout class="QVBoxLayout" name="verticalLayout_33">
-                 <item>
-                  <widget class="QLabel" name="label_local_inteligencia_2">
-                   <property name="styleSheet">
-                    <string notr="true">color: rgb(255, 255, 255);
-	font: 15px SegoeUIl, bold;</string>
-                   </property>
-                   <property name="text">
-                    <string>BANIR UM USUÁRIO</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLineEdit" name="lineEdit_2">
-                   <property name="styleSheet">
-                    <string notr="true">QLineEdit{
-border: 2px solid rgb(45,45,45);
-border-radius: 5px;
-padding: 10px;
-background-color: rgb(30,30,30);
-	color: rgb(203, 203, 203);
-font: 15px Courier New;
-}
-QLineEdit:hover{
-border: 2px solid rgb(55,55,55);
-}
-QLineEdit:focus{
-border: 2px solid  rgb(120,0,0);
-	color: rgb(120,0,0);
-}</string>
-                   </property>
-                   <property name="text">
-                    <string>id do usuário</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLabel" name="aviso_local_inteligencia_2">
-                   <property name="font">
-                    <font>
-                     <family>Segoe UI</family>
-                     <pointsize>14</pointsize>
-                    </font>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">color: rgb(120,0,0);</string>
-                   </property>
-                   <property name="text">
-                    <string>GLOBAL</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-              <item>
-               <widget class="QFrame" name="frame_frequencia_fala_2">
-                <property name="frameShape">
-                 <enum>QFrame::Box</enum>
-                </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Raised</enum>
-                </property>
-                <layout class="QVBoxLayout" name="verticalLayout_31">
-                 <item>
-                  <widget class="QLabel" name="label_frequencia_fala_2">
-                   <property name="styleSheet">
-                    <string notr="true">color: rgb(255, 255, 255);
-	font: 15px SegoeUIl, bold;</string>
-                   </property>
-                   <property name="text">
-                    <string>NULL</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLineEdit" name="lineEdit_3">
-                   <property name="styleSheet">
-                    <string notr="true">QLineEdit{
-border: 2px solid rgb(45,45,45);
-border-radius: 5px;
-padding: 10px;
-background-color: rgb(30,30,30);
-	color: rgb(203, 203, 203);
-font: 15px Courier New;
-}
-QLineEdit:hover{
-border: 2px solid rgb(55,55,55);
-}
-QLineEdit:focus{
-border: 2px solid  rgb(120,0,0);
-	color: rgb(120,0,0);
-}</string>
-                   </property>
-                   <property name="text">
-                    <string>null</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLabel" name="aviso_frequencia_fala_2">
-                   <property name="font">
-                    <font>
-                     <family>Segoe UI</family>
-                     <pointsize>14</pointsize>
-                    </font>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">color: rgb(120,0,0);</string>
-                   </property>
-                   <property name="text">
-                    <string>NULL</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -2200,6 +2593,12 @@ background-color: rgba(255, 255, 255, 0);</string>
               </property>
               <property name="styleSheet">
                <string notr="true">image: url(:/logo_telegram/program_functions/images//telegram_logo.png);</string>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::NoFrame</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
               </property>
               <property name="text">
                <string/>
