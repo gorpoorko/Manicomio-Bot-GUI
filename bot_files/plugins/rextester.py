@@ -12,7 +12,7 @@
 
 
 import aiohttp
-from bot_files.config import bot
+from config import bot
 import re
 from amanobot.namedtuple import InlineQueryResultArticle, InputTextMessageContent, InlineKeyboardMarkup, InlineKeyboardButton
 

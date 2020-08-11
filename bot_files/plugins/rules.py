@@ -11,9 +11,9 @@
 #     [+]        Github Gorpo Dev: https://github.com/gorpo     [+]
 
 
-from bot_files.config import bot, bot_username
-from bot_files.db_handler import conn, cursor
-from bot_files.plugins.admins import is_admin
+from config import bot, bot_username
+from db_handler import conn, cursor
+from plugins.admins import is_admin
 
 def get_rules(chat_id):
     cursor.execute('SELECT rules FROM chats WHERE chat_id = (?)', (chat_id,))

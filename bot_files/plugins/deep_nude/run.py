@@ -72,13 +72,13 @@ class Options():
 	def updateOptions(self, phase):
 
 		if phase == "correct_to_mask":
-			self.checkpoints_dir = "bot_files/plugins/deep_nude/checkpoints/cm.lib"
+			self.checkpoints_dir = "plugins/deep_nude/checkpoints/cm.lib"
 
 		elif phase == "maskref_to_maskdet":
-			self.checkpoints_dir = "bot_files/plugins/deep_nude/checkpoints/mm.lib"
+			self.checkpoints_dir = "plugins/deep_nude/checkpoints/mm.lib"
 
 		elif phase == "maskfin_to_nude":
-			self.checkpoints_dir = "bot_files/plugins/deep_nude/checkpoints/mn.lib"
+			self.checkpoints_dir = "plugins/deep_nude/checkpoints/mn.lib"
 
 # process(cv_img, mode)
 # return:

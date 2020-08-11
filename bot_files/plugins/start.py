@@ -14,7 +14,7 @@
 
 from amanobot.namedtuple import InlineKeyboardMarkup
 from bot_files.config import bot, version, bot_username, git_repo
-from bot_files import keyboard
+import keyboard
 
 
 async def start(msg):

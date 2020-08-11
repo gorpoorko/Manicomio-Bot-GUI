@@ -55,7 +55,7 @@ async def ia_deepnude(msg):
                             await bot.download_file(id_foto,'bot_files/arquivos/file.jpg')
                             await bot.sendMessage(chat_id,f"@{msg['from']['username']} `baixei sua imagem vou iniciar o processo Deep Nude, caso eu não retorne a imagem em até 5 minutos tente novamente.`",'markdown', reply_to_message_id=msg['message_id'])
                             try:
-                                subprocess.call('python bot_files/plugins/deep_nude/deepnude.py')
+                                subprocess.call('python plugins/deep_nude/deepnude.py')
                             except:
                                 pass
                             im = pyimgur.Imgur(token_imgur)
@@ -70,7 +70,7 @@ async def ia_deepnude(msg):
                             link_final = 'https://telegra.ph/{}'.format(response['path'])
                             print(f"Deep Nude Telegra.ph: {link_final}")
                             await bot.sendMessage(chat_id,f"🤖 {msg['from']['first_name']}:\n{link_final}", reply_to_message_id=msg['message_id'])
-                            #await bot.sendPhoto(msg['chat']['id'],photo=open('arquivos/renderizada.jpg','rb'),caption='Aqui esta seu DeepNude.', reply_to_message_id=msg['message_id'])
+                            #await bot.sendPhoto(msg['chat']['id'],photo=open('bot_files/arquivos/renderizada.jpg','rb'),caption='Aqui esta seu DeepNude.', reply_to_message_id=msg['message_id'])
 
                             cursor_sqlite.execute(f"""INSERT INTO deepnude_sites (int_id, grupo, tipo_grupo, id_grupo, usuario, id_usuario, data, imagem_original ,imagem_deepnude ,link_telegraph )VALUES(null,'{grupo}','{chat_type}','{chat_id}','{usuario}','{msg['from']['id']}','{data}','{link_imagem_original}','{link_imagem_deepnude}','{link_final}')""")
                             conexao_sqlite.commit()

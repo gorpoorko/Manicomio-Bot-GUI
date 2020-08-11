@@ -14,12 +14,13 @@
 
 import time
 from amanobot.namedtuple import InlineKeyboardMarkup
-from bot_files import keyboard
+import keyboard
 from datetime import datetime
 from bot_files.config import bot, version, bot_username, git_repo,logs,sudoers
 import sqlite3
 import os
 from bot_files.plugins.admins import is_admin
+
 
 
 
@@ -29,7 +30,7 @@ async def users(msg):
     conexao_sqlite.row_factory = sqlite3.Row
     cursor_sqlite = conexao_sqlite.cursor()
     # database logs ---->
-    conexao_logs = sqlite3.connect('bot_files/bot_database_logs.db')
+    conexao_logs = sqlite3.connect('bot_database_logs.db')
     conexao_logs.row_factory = sqlite3.Row
     cursor_logs = conexao_logs.cursor()
     try:

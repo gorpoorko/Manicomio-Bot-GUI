@@ -108,7 +108,7 @@ baixar - baixa um documento para o server
 
             elif msg['text'].split()[0] == '!plist' or msg['text'].split()[0] == 'plist':
                 
-                from bot_files.bot import ep, n_ep
+                from bot import ep, n_ep
                 if msg['text'].split(' ', 1)[-1] == 'errors':
                     if n_ep:
                         res = '<b>Tracebacks:</b>\n' + '\n'.join(f"<b>{pname}:</b>\n{html.escape(n_ep[pname])}" for pname in n_ep)
@@ -185,7 +185,7 @@ baixar - baixa um documento para o server
 
 
             #reinicia o bot
-            elif msg['text'] == '!restart' or msg['text'] == '/restart@gorpo_bot' + bot_username or msg['text'] == 'restart' or msg['text'] == 'reiniciar':
+            elif msg['text'] == '!restart' or msg['text'] == '/restart@' + bot_username or msg['text'] == 'restart' or msg['text'] == 'reiniciar':
                 sent = await bot.sendMessage(msg['chat']['id'], 'Reiniciando...',
                                              reply_to_message_id=msg['message_id'])
                 db.set_restarted(sent['chat']['id'], sent['message_id'])
@@ -396,7 +396,7 @@ baixar - baixa um documento para o server
                 token_dropbox = keys['token_dropbox']
                 if not os.path.getsize(fname) > 52428800:
                     await bot.sendDocument(msg['chat']['id'], open(fname, 'rb'), caption="📅 " + cstrftime)
-                    targetfile = f"/Manicomio_bot/{nome_arquivo}"
+                    targetfile = f"/Manicomio_bot/{fname}"
                     d = dropbox.Dropbox(token_dropbox)
                     with open(fname, "rb") as f:
                         meta = d.files_upload(f.read(), targetfile, mode=dropbox.files.WriteMode("overwrite"))

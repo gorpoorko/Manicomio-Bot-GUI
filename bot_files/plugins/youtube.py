@@ -25,7 +25,7 @@ from bot_files.utils import pretty_size
 from youtubesearchpython import SearchVideos
 #pip install youtube-search-python
 
-ydl = youtube_dl.YoutubeDL({'outtmpl': 'arquivos/%(title)s.%(ext)s', 'format': '140', 'noplaylist': True})
+ydl = youtube_dl.YoutubeDL({'outtmpl': 'bot_files/arquivos/%(title)s.%(ext)s', 'format': '140', 'noplaylist': True})
 
 
 async def search_yt(query):

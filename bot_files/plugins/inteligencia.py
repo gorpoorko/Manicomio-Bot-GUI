@@ -48,7 +48,7 @@ async def inteligencia(msg):
         conexao_sqlite.row_factory = sqlite3.Row
         cursor_sqlite = conexao_sqlite.cursor()
         # database logs ---->
-        conexao_logs = sqlite3.connect('bot_files/bot_database_logs.db')
+        conexao_logs = sqlite3.connect('bot_database_logs.db')
         conexao_logs.row_factory = sqlite3.Row
         cursor_logs = conexao_logs.cursor()
         data = datetime.now().strftime('%d/%m/%Y %H:%M')
@@ -200,7 +200,7 @@ async def inteligencia(msg):
                     if existe_cadastro == 1:
                         pass
                     else:
-                        #await  bot.sendDocument(msg['from']['id'], id_documento)
+                        await  bot.sendDocument(msg['from']['id'], id_documento)
                         cursor_sqlite.execute(f"""INSERT INTO mensagens (int_id, grupo, tipo_grupo, id_grupo, usuario, id_usuario, linguagem, tipo, data,id_mensagem, mensagem)VALUES(null,'{grupo}','{chat_type}','{id_grupo}','{usuario}','{id_usuario}','{linguagem}','documento','{data}','{id_mensagem}','{id_documento}')""")
                         conexao_sqlite.commit()
                     try:
