@@ -6,9 +6,7 @@
 [![Build](https://img.shields.io/badge/arquiterura-64bits-blue.svg)]()
 <h2 align="center">Manicomio Artificial Inteligence with Database GUI</h2>
 <img src="https://raw.githubusercontent.com/gorpo/Bases-python/master/images/banner_mani_telegram.jpg" width="100%"></img><br>
-Bot desenvolvido para monitorar e auxiliar nos grupos recebendo participantes e os cadastrando automaticamente em um banco de dados, no qual após determinada data os usuários são banidos, a data de permanencia padrão é de 35 dias. 
-Confira os Plugins e Comandos da Inteligencia Artificial para compreender tudo que este bot pode fazer.<br>
-ATENÇÃO: Alguns comandos listados devem ser escritos em minusculo e sem acentos conforme explicação de cada comando logo abaixo.
+Versao5.1 foi a versao que recebeu o gdrive, ou seja parou de receber plugins para começar correçoes, as correçoes feitas nas proximas versoes foram unificações dos arquivos para reduzir a quantidade de plugins<br>
 
 <h2>Instruções:</h2>
 1. Edite no arquivo config se quer rodar o bot local ou no heroku, comente e descomente as linhas.<br>
